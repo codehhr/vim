@@ -1,4 +1,4 @@
-# my vim configuration
+# my `vim.nvim` configuration
 
 # `vim` / `nvim` 配置
 
