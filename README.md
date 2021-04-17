@@ -1,6 +1,4 @@
-# my `vim.nvim` configuration
-
-# `vim` / `nvim` 配置
+# 我的 `vim` / `nvim` 配置
 
 ### 1. `vim`
 
