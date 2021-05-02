@@ -44,7 +44,6 @@ map gc :terminal<CR>
 "打开文件
 map e :edit<space>
 
-"打开 lazygit
 
 "=========================vim 配色======================================= 
 "语法高亮
@@ -54,7 +53,7 @@ syntax on
 "主题颜色设定
 colo skeletor
 
-"A
+
 "=========================一般设置=======================================
 "去除VIM一致性，必须
 set nocompatible
@@ -86,7 +85,7 @@ set nowrap
 
 "======================NerdTree插件的配置信息===============================
 "将F2设置为开关NERDTree的快捷键
-map <F2> :NERDTreeToggle<cr>
+map <C-\> :NERDTreeToggle<cr>
 "修改树的显示图标
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
@@ -98,9 +97,6 @@ let g:NERDTreeSize=30
 let g:NERDTreeShowLineNumbers=1
 "不显示隐藏文件
 let g:NERDTreeHidden=0
-
-
-
 
 
 
@@ -151,10 +147,12 @@ let g:airline_symbols.maxlinenr = 'Ml' "maxline
 let g:airline_symbols.branch = 'BR'
 let g:airline_symbols.readonly = "RO"
 let g:airline_symbols.dirty = "DT"
-let g:airline_symbols.crypt = "CR" 
+let g:airline_symbols.crypt = "CR"
+
 
 
 "==========================Example coc.vim configuration=========================
+
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
@@ -322,7 +320,9 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
+
 "======================================nerdcommenter注释工具==========================
+"
 "add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " python 自动的会多加一个空格
@@ -349,6 +349,8 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
+
+"=====================================rainbow==============================
 
 " rainbow 一个提供嵌套括号高亮的工具
 let g:rainbow_active = 1
@@ -378,7 +380,7 @@ let g:rainbow_conf = {
 
 "==================== tagbar 展示当前文件的一些函数,按下回车跳转到指定的函数=======
 let g:tagbar_width=30
-nnoremap <silent> <F4> :TagbarToggle<CR> " 将tagbar的开关按键设置为 F4
+nnoremap <silent> <F12> :TagbarToggle<CR> " 将tagbar的开关按键设置为 <F12>
 
 
 "==================================indentLine=======================================
@@ -449,7 +451,8 @@ au BufNewFile,BufRead *.html,*.js,*.vue set fileformat=unix
 "=====================vim-emmet==============================================
 let g:user_emmet_expandabbr_key = '<C-e>'
 
-"==================================vim-plug========================================
+
+"=================================vim-plug========================================
 
 call plug#begin('~/.vim/plugged')
 
@@ -469,8 +472,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "airline 的主题
-Plug 'vim-airline/vim-airline'       
-Plug 'vim-airline/vim-airline-themes' 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 "注释工具
 Plug 'scrooloose/nerdcommenter'
@@ -496,7 +499,9 @@ Plug 'iamcco/mathjax-support-for-mkdp'
 "vue 语法高亮
 Plug 'posva/vim-vue'
 
+" html补全
 Plug 'mattn/emmet-vim'
+
 
 call plug#end()
 
