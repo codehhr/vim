@@ -27,13 +27,13 @@ map sx :set splitbelow<CR>:split<CR>
 
 "光标移动
 "up
-map su <C-w>k 
+map sk <C-w>k 
 "dowm
 map sj <C-w>j
 "let
 map sh <C-w>h
 "right
-map sk <C-w>l
+map sl <C-w>l
 
 "
 map gc :terminal<CR>
