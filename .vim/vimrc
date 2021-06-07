@@ -1,15 +1,12 @@
 "==========================键位====================================== 
 "上 (u)
-noremap u 5k
+noremap k 5k
 "下 (k)
 noremap j 5j
 "左 (h)
 noremap h 5h
 "右 (k)
-noremap k 5l
-
-"撤销 (U)
-noremap U u 
+noremap l 5l
 
 map s <nop>
 map S :w<CR>
@@ -30,13 +27,13 @@ map sx :set splitbelow<CR>:split<CR>
 
 "光标移动
 "up
-map <C-u> <C-w>k 
+map su <C-w>k 
 "dowm
-map <C-j> <C-w>j
+map sj <C-w>j
 "let
-map <C-h> <C-w>h
+map sh <C-w>h
 "right
-map <C-k> <C-w>l
+map sk <C-w>l
 
 "
 map gc :terminal<CR>
