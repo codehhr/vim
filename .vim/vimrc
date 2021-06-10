@@ -10,7 +10,7 @@ noremap l 5l
 
 map s <nop>
 map S :w<CR>
-map Q :q<CR>
+map Q :q!<CR>
 map R :source $MYVIMRC<CR>
 
 "向右分屏,光标在右
@@ -377,7 +377,8 @@ let g:rainbow_conf = {
 
 "==================== tagbar 展示当前文件的一些函数,按下回车跳转到指定的函数=======
 let g:tagbar_width=30
-nnoremap <silent> <F12> :TagbarToggle<CR> " 将tagbar的开关按键设置为 <F12>
+" 将tagbar的开关按键设置为 <F11>
+nnoremap <silent> <F11> :TagbarToggle<CR> 
 
 
 "==================================indentLine=======================================
@@ -498,6 +499,9 @@ Plug 'posva/vim-vue'
 
 " html补全
 Plug 'mattn/emmet-vim'
+
+" vim 多光标
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 
 call plug#end()
