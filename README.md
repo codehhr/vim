@@ -1,8 +1,16 @@
-# 我的 `vim` 配置
+# 我的 `nvim` 配置
 
 需要安装 `nodejs` , `ccls` , `ctags`
 
-然后在你的 `vimrc` 文件里输入
+# 安装后需要
+
+安装 `pip` , `pip install --user pynvim`
+安装 `pip3` , `pip3 install --user pynvim`
+安装 `node` , `npm install -g neovim`
+安装 `nerd-fonts` ( 可选 )
+
+# 最后
+
 ```
 :PlugUpdate
 ```
