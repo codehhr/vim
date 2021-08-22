@@ -12,6 +12,7 @@ map s <nop>
 map S :w<CR>
 map Q :q!<CR>
 map R :source $MYVIMRC<CR>
+map <F12> [<c-i>
 
 map J 5j
 map U 5k
@@ -73,37 +74,36 @@ let g:SnazzyTransparent = 1
 colorscheme snazzy
 
 "=========================一般设置=======================================
-"去除VIM一致性，必须
-set nocompatible
-filetype off
+set nocompatible					"去除VIM一致性，必须
+filetype on
 set scrolloff=8
-set nocompatible          "vim比vi支持更多的功能，如showcmd，避免冲突和副作用，最好关闭兼容 
-set encoding=utf-8        "使用utf-8编码 
-set number                "显示行号 
-set showcmd               "显示输入命令 
-set list
-set listchars=tab:--,trail:♫	"tab & trail characters"
+set nocompatible					"vim比vi支持更多的功能，如showcmd，避免冲突和副作用，最好关闭兼容 
+set encoding=utf-8					"使用utf-8编码 
+set number							"显示行号 
+set showcmd							"显示输入命令 
+set nolist							"不显示隐藏字符
+set listchars=tab:--,trail:♫		"切换显示隐藏字符 (tab & trail characters)
 map zh :set list!<CR>
-set clipboard=unnamed,unnamedplus    "可以从vim复制到剪贴版中 
-set mouse=a               "可以在buffer的任何地方使用鼠标 
-set cursorline            "高亮当前行 
-set hlsearch              "显示高亮搜索 
-set incsearch             "增量高亮搜索"
-set smartcase             "智能大小写"
+set clipboard=unnamed,unnamedplus	"可以从vim复制到剪贴版中 
+set mouse=a							"可以在buffer的任何地方使用鼠标 
+set cursorline						"高亮当前行 
+set hlsearch						"显示高亮搜索 
+set incsearch						"增量高亮搜索"
+set smartcase						"智能大小写"
 map <ESC> :nohlsearch<CR>
-set history=100           "默认指令记录是20 
-set ruler                 "显示行号和列号（默认打开) 
-set pastetoggle=<F3>      "F3快捷键于paste模式与否之间转化，防止自动缩进 
-"set helplang=cn           "设置为中文帮助文档,需下载并配置之后才生效 
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif  "上次编辑位置"
+set history=100						"默认指令记录是20 
+set ruler							"显示行号和列号（默认打开) 
+set pastetoggle=<F3>				"F3快捷键于paste模式与否之间转化，防止自动缩进 
+"set helplang=cn					"设置为中文帮助文档,需下载并配置之后才生效 
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif  "打开上次编辑位置"
 
 "===========================文本格式排版================================
-set tabstop=4              "设置tab长度为4 
+set tabstop=4						"设置tab长度为4 
 set softtabstop=4
-set shiftwidth=4           "设置自动对齐的缩进级别 
-set cindent                "自动缩进,以c语言风格，例如从if进入下一行，会自动缩进shiftwidth大小 
-set smartindent            "改进版的cindent,自动识别以#开头的注释，不进行换行 
-set autoindent              "autoindent配合下面一条命令根据不同语言类型进行不同的缩进操作，更加智能 
+set shiftwidth=4					"设置自动对齐的缩进级别 
+set cindent							"自动缩进,以c语言风格，例如从if进入下一行，会自动缩进shiftwidth大小 
+set smartindent						"改进版的cindent,自动识别以#开头的注释，不进行换行 
+set autoindent						"autoindent配合下面一条命令根据不同语言类型进行不同的缩进操作，更加智能 
 filetype plugin indent on 
 set nowrap 
 
