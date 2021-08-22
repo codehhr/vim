@@ -12,6 +12,10 @@ map s <nop>
 map S :w<CR>
 map Q :q!<CR>
 map R :source $MYVIMRC<CR>
+<<<<<<< Updated upstream
+=======
+map F gg=G
+>>>>>>> Stashed changes
 map <F12> [<c-i>
 
 map J 5j
