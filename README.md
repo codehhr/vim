@@ -4,10 +4,10 @@
 
 ## 安装后需要
 
-安装 `pip` , `pip install --user pynvim`  
-安装 `pipip3` , `pip3 install --user pynvim`  
-安装 `pinode` , `npm install -g neovim`  
-安装 `pinerd-fonts` ( 可选 )  
+- 安装 `pip` , `pip install --user pynvim`  
+- 安装 `pipip3` , `pip3 install --user pynvim`  
+- 安装 `pinode` , `npm install -g neovim`  
+- 安装 `pinerd-fonts` ( 可选 )  
 
 ## 最后
 
