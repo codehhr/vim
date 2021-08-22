@@ -1,6 +1,8 @@
 # 我的 `nvim` 配置
 
-需要安装 `nodejs` , `ccls` , `ctags`
+![nvim](https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/vim/vim-screenshot.png)
+
+没有仔细配置 , 需要安装 `nodejs` , `ccls` , `ctags`
 
 ## 安装后需要
 
