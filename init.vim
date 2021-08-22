@@ -12,7 +12,7 @@ map s <nop>
 map S :w<CR>
 map Q :q!<CR>
 map R :source $MYVIMRC<CR>
-map F gg=G
+"formawt doc
 map <F12> [<c-i>
 
 map J 5j
