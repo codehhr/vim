@@ -1,11 +1,13 @@
-"  __  ____   __  _   ___     _____ __  __ ____   ____
-" |  \/  \ \ / / | \ | \ \   / /_ _|  \/  |  _ \ / ___|
-" | |\/| |\ V /  |  \| |\ \ / / | || |\/| | |_) | |
-" | |  | | | |   | |\  | \ V /  | || |  | |  _ <| |___
-" |_|  |_| |_|   |_| \_|  \_/  |___|_|  |_|_| \_\\____|
-"
+"	                              _
+"	 _ __ ___  _   _   _ ____   _(_)_ __ ___  _ __ ___
+"	| '_ ` _ \| | | | | '_ \ \ / / | '_ ` _ \| '__/ __|
+"	| | | | | | |_| | | | | \ V /| | | | | | | | | (__
+"	|_| |_| |_|\__, | |_| |_|\_/ |_|_| |_| |_|_|  \___|
+"	           |___/
+"	
 "==========================键位====================================== 
-" <leader> == \
+"
+" let mapleader = \ ( leader 默认就是 \ )
 map s <nop>
 map S :w<CR>
 map Q :q!<CR>
@@ -80,13 +82,15 @@ set encoding=utf-8        "使用utf-8编码
 set number                "显示行号 
 set showcmd               "显示输入命令 
 set list
+set listchars=tab:--,trail:♫	"tab & trail characters"
+map zh :set list!<CR>
 set clipboard=unnamed,unnamedplus    "可以从vim复制到剪贴版中 
 set mouse=a               "可以在buffer的任何地方使用鼠标 
 set cursorline            "高亮当前行 
 set hlsearch              "显示高亮搜索 
 set incsearch             "增量高亮搜索"
 set smartcase             "智能大小写"
-map <ESC> :nohlsearch<CR> 
+map <ESC> :nohlsearch<CR>
 set history=100           "默认指令记录是20 
 set ruler                 "显示行号和列号（默认打开) 
 set pastetoggle=<F3>      "F3快捷键于paste模式与否之间转化，防止自动缩进 
