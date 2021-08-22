@@ -13,6 +13,8 @@ map S :w<CR>
 map Q :q!<CR>
 map R :source $MYVIMRC<CR>
 "formawt doc
+map F gg=G<C-o>
+"go to #define
 map <F12> [<c-i>
 
 map J 5j
