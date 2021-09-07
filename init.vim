@@ -87,7 +87,7 @@ set showcmd							"显示输入命令
 set nolist							"不显示隐藏字符
 set listchars=tab:--,trail:♫		"切换显示隐藏字符 (tab & trail characters)
 map zh :set list!<CR>
-set clipboard=unnamed,unnamedplus	"可以从vim复制到剪贴版中 
+set clipboard+=unnamed,unnamedplus	"可以从vim复制到剪贴版中 
 set mouse=a							"可以在buffer的任何地方使用鼠标 
 set cursorline						"高亮当前行 
 set hlsearch						"显示高亮搜索 
@@ -340,7 +340,7 @@ nnoremap <silent> <F11> :TagbarToggle<CR>
 "==================================indentLine=======================================
 let g:indentLine_char='┆'
 let g:indentLine_enabled = 1
-
+let g:indent_guides_start_level = 2  " 从第二层开始可视化显示缩进
 "=======================markdown-preview===========================================
 "默认配置
 let g:mkdp_path_to_chrome = "google-chrome-stable"
@@ -411,28 +411,30 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
 
 "==============================vim "rainbow ===================================
-"rainbow
 let g:rainbow_active = 1
-let g:rbpt_colorpairs = [
-			\ ['brown',       'RoyalBlue3'],
-			\ ['Darkblue',    'SeaGreen3'],
-			\ ['darkgray',    'DarkOrchid3'],
-			\ ['darkgreen',   'firebrick3'],
-			\ ['darkcyan',    'RoyalBlue3'],
-			\ ['darkred',     'SeaGreen3'],
-			\ ['darkmagenta', 'DarkOrchid3'],
-			\ ['brown',       'firebrick3'],
-			\ ['gray',        'RoyalBlue3'],
-			\ ['black',       'SeaGreen3'],
-			\ ['darkmagenta', 'DarkOrchid3'],
-			\ ['Darkblue',    'firebrick3'],
-			\ ['darkgreen',   'RoyalBlue3'],
-			\ ['darkcyan',    'SeaGreen3'],
-			\ ['darkred',     'DarkOrchid3'],
-			\ ['red',         'firebrick3'],
-			\ ]
-let g:rbpt_max = 40
-let g:rbpt_loadcmd_toggle = 0
+let g:rainbow_conf = {
+\   'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
+\   'ctermfgs': ['lightyellow', 'lightcyan','lightblue', 'lightmagenta'],
+\   'operators': '_,_',
+\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\   'separately': {
+\       '*': {},
+\       'tex': {
+\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+\       },
+\       'lisp': {
+\           'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
+\       },
+\       'vim': {
+\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+\       },
+\       'html': {
+\           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+\       },
+\       'css': 0,
+\   }
+\}
+
 
 "============================ 括号自动补全================================
 au FileType python let b:delimitMate_nesting_quotes = ['"']
