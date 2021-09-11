@@ -62,7 +62,7 @@ map <C-t> :tabnew<space>
 "tabprevious
 map <C-pageup> :tabp<CR>
 "tabnext
-map sn :tabn<CR>
+map <C-pagedown> :tabn<CR>
 
 "打开文件
 map e :edit<space>
