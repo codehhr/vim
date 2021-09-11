@@ -58,7 +58,7 @@ map SV SQsx
 
 "标签
 "新建标签
-map <C-t> :tabnew<CR>
+map <C-t> :tabnew<space>
 "tabprevious
 map sp :tabp<CR>
 "tabnext
