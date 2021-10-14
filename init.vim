@@ -18,7 +18,7 @@ map F gg=G<C-o>
 map <F12> [<c-i>
 
 map J 5j
-map U 5k
+map K 5k
 
 "向右分屏,光标在右
 map sd :set splitright<CR>:vsplit<CR>
@@ -193,7 +193,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> <C-d> :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
 	if (index(['vim','help'], &filetype) >= 0)
