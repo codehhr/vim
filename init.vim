@@ -17,8 +17,16 @@ map F gg=G<C-o>
 "go to #define
 map <F12> [<c-i>
 
+" comment ( \\ )
+map <leader><leader> <leader>c<space>
+
+" execute js
+map <C-x> :! node %<CR>
+
 map J 5j
 map K 5k
+map H 5h
+map L 5l
 
 "向右分屏,光标在右
 map sd :set splitright<CR>:vsplit<CR>
