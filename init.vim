@@ -80,6 +80,7 @@ colorscheme snazzy
 set nocompatible					"去除VIM一致性，必须
 filetype on
 set scrolloff=8
+map re :set relativenumber!<CR>
 set nocompatible					"vim比vi支持更多的功能，如showcmd，避免冲突和副作用，最好关闭兼容 
 set encoding=utf-8					"使用utf-8编码 
 set number							"显示行号 
