@@ -42,10 +42,10 @@ map sw :set nosplitbelow<CR>:split<CR>
 map sx :set splitbelow<CR>:split<CR>
 
 "调整分屏大小
-map <up> :res +5<CR>
-map <down> :res -5<CR>
-map <left> :vertical resize -5<CR>
-map <right> :vertical resize +5<CR>
+map <C-k> :res +5<CR>
+map <C-j> :res -5<CR>
+map <C-h> :vertical resize -5<CR>
+map <C-l> :vertical resize +5<CR>
 
 "光标在分屏之间移动
 "    su
