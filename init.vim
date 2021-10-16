@@ -18,6 +18,7 @@ imap jj <ESC>
 
 "formawt doc
 map F gg=G<C-o>
+
 "go to #define
 map <F12> [<c-i>
 
@@ -63,11 +64,11 @@ map sk <C-w>l
 
 "标签
 "新建标签
-map <C-t> :tabnew<space>
+map tt :tabnew<space>
 "tabprevious
-map <C-pageup> :tabp<CR>
-"tabnext
-map <C-pagedown> :tabn<CR>
+map <C-p> :tabp<CR>
+"tabnext (Alt+p)
+map <A-p> :tabn<CR>
 
 "打开文件
 map e :edit<space>
@@ -118,6 +119,8 @@ set nowrap
 
 "======================NerdTree插件的配置信息===============================
 "将F2设置为开关NERDTree的快捷键
+imap ss :NERDTreeToggle<cr>
+map ss :NERDTreeToggle<cr>
 map <C-\> :NERDTreeToggle<cr>
 "修改树的显示图标
 let g:NERDTreeDirArrowExpandable = '+'
