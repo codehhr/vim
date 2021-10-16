@@ -61,10 +61,6 @@ map sh <C-w>h
 "right
 map sk <C-w>l
 
-"切换分屏方向
-map SH SQsd
-map SV SQsx
-
 "标签
 "新建标签
 map <C-t> :tabnew<space>
