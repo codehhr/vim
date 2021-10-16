@@ -12,6 +12,10 @@ map s <nop>
 map S :w<CR>
 map Q :q!<CR>
 map R :source $MYVIMRC<CR>
+
+" jj for ESC
+imap jj <ESC>
+
 "formawt doc
 map F gg=G<C-o>
 "go to #define
