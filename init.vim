@@ -22,9 +22,6 @@ map F gg=G<C-o>
 "go to #define
 map <F12> [<c-i>
 
-" execute js
-map <C-x> :! node %<CR>
-
 map J 5j
 map K 5k
 map H 5h
@@ -64,11 +61,11 @@ map sk <C-w>l
 
 "标签
 "新建标签
-map tt :tabnew<space>
+map <C-t> :tabnew<space>
 "tabprevious
-map <C-p> :tabp<CR>
+map <TAB> :tabn<CR>
 "tabnext (Alt+p)
-map <A-p> :tabn<CR>
+map <A-p> :tabp<CR>
 
 "打开文件
 map e :edit<space>
@@ -85,6 +82,10 @@ colorscheme snazzy
 "=========================一般设置=======================================
 set nocompatible					"去除VIM一致性，必须
 filetype on
+set nofoldenable					"启动 vim 时关闭折叠代码"
+set diffopt+=vertical				" 垂直窗口 git diff"
+" 打开 vim 时自动打开 NERDTree
+" autocmd vimenter * NERDTree | wincmd p
 set scrolloff=8
 map re :set relativenumber!<CR>
 set nocompatible					"vim比vi支持更多的功能，如showcmd，避免冲突和副作用，最好关闭兼容 
@@ -104,7 +105,7 @@ map <ESC> :nohlsearch<CR>
 set history=100						"默认指令记录是20 
 set ruler							"显示行号和列号（默认打开) 
 set pastetoggle=<F3>				"F3快捷键于paste模式与否之间转化，防止自动缩进 
-"set helplang=cn					"设置为中文帮助文档,需下载并配置之后才生效 
+" set helplang=cn					"设置为中文帮助文档,需下载并配置之后才生效
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif  "打开上次编辑位置"
 
 "===========================文本格式排版================================
@@ -119,12 +120,11 @@ set nowrap
 
 "======================NerdTree插件的配置信息===============================
 "将F2设置为开关NERDTree的快捷键
-imap ss :NERDTreeToggle<cr>
 map ss :NERDTreeToggle<cr>
 map <C-\> :NERDTreeToggle<cr>
 "修改树的显示图标
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
+" let g:NERDTreeDirArrowExpandable = '+'
+" let g:NERDTreeDirArrowCollapsible = '-'
 "窗口位置
 let g:NERDTreeWinPos='left'
 "窗口尺寸
@@ -133,6 +133,18 @@ let g:NERDTreeSize=30
 let g:NERDTreeShowLineNumbers=1
 "不显示隐藏文件
 let g:NERDTreeHidden=0
+" let g:NERDTreeIndicatorMapCustom = {
+"      'Modified' : '✹',
+"      'Staged'    : '✚',
+"      'Untracked' : '✭',
+"      'Renamed'   : '➜',
+"      'Unmerged'  : '═',
+"      'Deleted'   : '✖',
+"      'Dirty'     : '✗',
+"      'Clean'     : '✔︎',
+"      'Ignored'   : '☒',
+"      'Unknown'   : '?'
+"      }
 
 "======================================= coc 代码补全 =============================
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
@@ -147,7 +159,7 @@ set nobackup
 set nowritebackup
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -201,7 +213,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window.
+" show documentation in preview window.
 nnoremap <silent> <C-d> :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -263,10 +275,6 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
 	vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -276,11 +284,6 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
@@ -293,10 +296,6 @@ nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
@@ -398,6 +397,7 @@ nmap <silent> <F9> <Plug>StopMarkdownPreview
 imap <silent> <F9> <Plug>StopMarkdownPreview 
 
 "缩进采用的是两个空格=================vim-vue====================================
+"
 au BufNewFile,BufRead *.html,*.js,*.vue set tabstop=2
 
 au BufNewFile,BufRead *.html,*.js,*.vue set softtabstop=2
@@ -414,10 +414,17 @@ au BufNewFile,BufRead *.html,*.js,*.vue set fileformat=unix
 let g:user_emmet_expandabbr_key = '<C-e>'
 
 "========================vim-airline======================================
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'default'
+set laststatus=2			" 始终显示状态栏
+let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='bubblegum'
+set t_Co=256				"在windows中用xshell连接打开vim可以显示色彩
+" tabline 样式
+" let g:airline#extensions#tabline#formatter = 'Default'
+"powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 
 "==============================vim "rainbow ===================================
 let g:rainbow_active = 1
@@ -504,6 +511,7 @@ Plug 'connorholyday/vim-snazzy'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" icon
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
-
