@@ -172,6 +172,7 @@ let g:coc_global_extensions = ['coc-json',
 \ 'coc-vimlsp', 
 \ 'coc-prettier', 
 \ 'coc-prisma', 
+\ 'coc-python',
 \ 'coc-syntax', 
 \ 'coc-diagnostic', 
 \ 'coc-import-cost', 
@@ -469,6 +470,7 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 "====================================================================
 "
 set laststatus=2			" 始终显示状态栏
+let g:powerline_pycmd="py3"
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='bubblegum'
 set t_Co=256				"在windows中用xshell连接打开vim可以显示色彩
