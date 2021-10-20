@@ -89,7 +89,7 @@
 	"typescript.suggestionActions.enabled": true,
 	"typescript.format.enabled": true,
 	"jest.watch": false,
-	"explorer.width": 32,
+	"explorer.width": 30,
 	"explorer.quitOnOpen": true,
 	"explorer.sources": [
 		{
