@@ -168,27 +168,28 @@ let g:NERDTreeHidden=0
 "==================================================================== 
 "
 " coc extensions
-let g:coc_global_extensions = ['coc-json',
-\ 'coc-vimlsp', 
-\ 'coc-prettier', 
-\ 'coc-prisma', 
-\ 'coc-python',
-\ 'coc-syntax', 
-\ 'coc-diagnostic', 
-\ 'coc-import-cost', 
-\ 'coc-snippets', 
-\ 'coc-neosnippet', 
-\ 'coc-yaml', 
-\ 'coc-yank', 
-\ 'coc-jest', 
-\ 'coc-explorer', 
-\ 'coc-flutter', 
-\ 'coc-flutter-tools', 
-\ 'coc-tslint', 
-\ 'coc-eslint', 
-\ 'coc-todolist', 
-\ 'coc-actions', 
-\ 'coc-vetur']
+let g:coc_global_extensions = [
+	\ 'coc-json',
+	\ 'coc-vimlsp', 
+	\ 'coc-prettier', 
+	\ 'coc-prisma', 
+	\ 'coc-python',
+	\ 'coc-syntax', 
+	\ 'coc-diagnostic', 
+	\ 'coc-import-cost', 
+	\ 'coc-snippets', 
+	\ 'coc-neosnippet', 
+	\ 'coc-yaml', 
+	\ 'coc-yank', 
+	\ 'coc-jest', 
+	\ 'coc-explorer', 
+	\ 'coc-flutter', 
+	\ 'coc-flutter-tools', 
+	\ 'coc-tslint', 
+	\ 'coc-eslint', 
+	\ 'coc-todolist', 
+	\ 'coc-actions', 
+	\ 'coc-vetur']
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -329,20 +330,23 @@ nmap <space>c :tabnew<CR>:CocConfig<CR>
 nmap <space>d :CocCommand<CR>
 nmap ss :CocCommand explorer<CR>
 
-"==================================================================== 
-"============================ coc translate =========================
-"==================================================================== 
+" "====================================================================
+" "============================ coc translate =========================
+" "====================================================================
+" "
+" " NOTE: do NOT use `nore` mappings
+" " popup
+" nmap tr <Plug>(coc-translator-p)
+" vmap tr <Plug>(coc-translator-pv)
+" " echo
+" nmap te <Plug>(coc-translator-e)
+" vmap te <Plug>(coc-translator-ev)
+" " replace
+" nmap TR <Plug>(coc-translator-r)
+" vmap TR <Plug>(coc-translator-rv)
 "
-" NOTE: do NOT use `nore` mappings
-" popup
-nmap tr <Plug>(coc-translator-p)
-vmap tr <Plug>(coc-translator-pv)
-" echo
-nmap te <Plug>(coc-translator-e)
-vmap te <Plug>(coc-translator-ev)
-" replace
-nmap TR <Plug>(coc-translator-r)
-vmap TR <Plug>(coc-translator-rv)
+" " :CocList translation
+" nmap tl :CocList translation<CR>
 
 
 "==================================================================== 
@@ -470,7 +474,7 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 "====================================================================
 "
 set laststatus=2			" 始终显示状态栏
-let g:powerline_pycmd="py3"
+" let g:powerline_pycmd="py3"
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='bubblegum'
 set t_Co=256				"在windows中用xshell连接打开vim可以显示色彩
@@ -520,6 +524,46 @@ let g:rainbow_conf = {
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 
 "====================================================================
+"=================== voldikss/vim-translator ========================
+"====================================================================
+"
+let g:translator_target_lang = 'zh'
+let g:translator_source_lang = 'auto'
+" default: If g:translator_target_lang is 'zh', this will be ['bing', 'google', 'haici', 'youdao'], otherwise ['google']
+" available: 'bing', 'google', 'haici', 'iciba'(expired), 'sdcv', 'trans', 'youdao'
+let g:translator_default_engines = ['youdao', 'bing']
+" let g:translator_proxy_url = 'socks5://127.0.0.1:4781'
+let g:translator_history_enable = v:true
+" available: 'popup'(use floatwin in nvim or popup in vim), 'preview'
+" default: use <C-w>p to jump into popup window and to jump back
+map <C-p> <C-w>p
+let g:translator_window_type = 'popup'
+" number of columns or Float (between 0 and 1), default 0.6, If Float, the width is relative to &columns.
+let g:translator_window_max_width = 100
+" number of columns or Float (between 0 and 1), default 0.6, If Float, the width is relative to &columns.
+let g:translator_window_max_height = 100
+" default: ['─', '│', '─', '│', '┌', '┐', '┘', '└']
+let g:translator_window_borderchars = ['─', '│', '─', '│', '┌', '┐', '┘', '└']
+
+""" Configuration example
+" Echo translation in the cmdline
+nmap <silent> te <Plug>Translate
+vmap <silent> te <Plug>TranslateV
+" Display translation in a window
+nmap <silent> tr <Plug>TranslateW
+vmap <silent> tr <Plug>TranslateWV
+" Replace the text with translation
+nmap <silent> TR <Plug>TranslateR
+vmap <silent> TR <Plug>TranslateRV
+" Translate the text in clipboard
+nmap <silent> tx <Plug>TranslateX
+" there is a function which can be used to scroll window, only works in neovim.
+nnoremap <silent><expr> <M-f> translator#window#float#has_scroll() ?
+                            \ translator#window#float#scroll(1) : "\<M-f>"
+nnoremap <silent><expr> <M-b> translator#window#float#has_scroll() ?
+                            \ translator#window#float#scroll(0) : "\<M-f>"
+
+"====================================================================
 "============================ vim-plug ==============================
 "====================================================================
 "
@@ -555,6 +599,9 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 "indentLine
 Plug 'Yggdroot/indentLine'
 
+" voldikss/vim-translator
+Plug 'voldikss/vim-translator'
+
 "实时通过浏览器预览 markdown 文件
 Plug 'iamcco/markdown-preview.vim'
 
@@ -562,7 +609,7 @@ Plug 'iamcco/markdown-preview.vim'
 Plug 'iamcco/mathjax-support-for-mkdp'
 
 "vue 语法高亮
-" Plug 'posva/vim-vue'
+Plug 'posva/vim-vue'
 
 " html补全
 Plug 'mattn/emmet-vim'
