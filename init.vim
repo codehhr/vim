@@ -1,9 +1,76 @@
-"	                              _	 _ __ ___  _   _   _ ____   _(_)_ __ ___  _ __ ___
-"	| '_ ` _ \| | | | | '_ \ \ / / | '_ ` _ \| '__/ __|
-"	| | | | | | |_| | | | | \ V /| | | | | | | | | (__
-"	|_| |_| |_|\__, | |_| |_|\_/ |_|_| |_| |_|_|  \___|
-"	           |___/
-"	
+"
+"  __  ____   __  _   ___     _____ __  __ ____   ____
+" |  \/  \ \ / / | \ | \ \   / /_ _|  \/  |  _ \ / ___|
+" | |\/| |\ V /  |  \| |\ \ / / | || |\/| | |_) | |
+" | |  | | | |   | |\  | \ V /  | || |  | |  _ <| |___
+" |_|  |_| |_|   |_| \_|  \_/  |___|_|  |_|_| \_\\____|
+"
+"====================================================================
+"============================ vim-plug ==============================
+"====================================================================
+"
+call plug#begin('~/.config/nvim/plugged')
+
+"nerdtree 左侧打开文件目录
+Plug 'preservim/nerdtree'
+
+"css/less/sass/html color preview for vim
+Plug 'gorodinskiy/vim-coloresque'
+
+"Syntax Highlighting for Stylus
+Plug 'wavded/vim-stylus'
+
+"Vastly improved Javascript indentation and syntax support in Vim.
+Plug 'pangloss/vim-javascript'
+"
+"coc.vim 补全
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"
+"注释工具
+Plug 'scrooloose/nerdcommenter'
+
+"提供嵌套括号高亮
+Plug 'luochen1990/rainbow'
+
+"展示当前文件的函数
+Plug 'majutsushi/tagbar'
+
+"indentLine
+Plug 'Yggdroot/indentLine'
+
+" voldikss/vim-translator
+Plug 'voldikss/vim-translator'
+
+"实时通过浏览器预览 markdown 文件
+Plug 'iamcco/markdown-preview.vim'
+
+"预览数学公式
+Plug 'iamcco/mathjax-support-for-mkdp'
+
+"vue 语法高亮
+Plug 'posva/vim-vue'
+
+" html补全
+Plug 'mattn/emmet-vim'
+
+" vim 多光标
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+"
+" 主题颜色
+Plug 'connorholyday/vim-snazzy'
+
+" vim-airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"
+" icon
+Plug 'ryanoasis/vim-devicons'
+
+" building CMake projects inside of Vim/Neovim
+Plug 'cdelledonne/vim-cmake'
+
+call plug#end()
+
 "==================================================================== 
 "========================= 键位 ===================================== 
 "==================================================================== 
@@ -83,7 +150,7 @@ syntax enable
 syntax on
 
 "主题颜色设定
-let g:SnazzyTransparent = 1
+let g:SnazzyTransparent = 1			" snazzy transparent"
 colorscheme snazzy
 
 "==================================================================== 
@@ -202,7 +269,7 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr> <C-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -555,69 +622,3 @@ nnoremap <silent><expr> <M-f> translator#window#float#has_scroll() ?
                             \ translator#window#float#scroll(1) : "\<M-f>"
 nnoremap <silent><expr> <M-b> translator#window#float#has_scroll() ?
                             \ translator#window#float#scroll(0) : "\<M-f>"
-
-"====================================================================
-"============================ vim-plug ==============================
-"====================================================================
-"
-call plug#begin('~/.config/nvim/plugged')
-
-"nerdtree 左侧打开文件目录
-Plug 'preservim/nerdtree'
-
-"css/less/sass/html color preview for vim
-Plug 'gorodinskiy/vim-coloresque'
-
-"Syntax Highlighting for Stylus
-Plug 'wavded/vim-stylus'
-
-"Vastly improved Javascript indentation and syntax support in Vim.
-Plug 'pangloss/vim-javascript'
-"
-"coc.vim 补全
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"
-"注释工具
-Plug 'scrooloose/nerdcommenter'
-
-"提供嵌套括号高亮
-Plug 'luochen1990/rainbow'
-
-"展示当前文件的函数
-Plug 'majutsushi/tagbar'
-
-"indentLine
-Plug 'Yggdroot/indentLine'
-
-" voldikss/vim-translator
-Plug 'voldikss/vim-translator'
-
-"实时通过浏览器预览 markdown 文件
-Plug 'iamcco/markdown-preview.vim'
-
-"预览数学公式
-Plug 'iamcco/mathjax-support-for-mkdp'
-
-"vue 语法高亮
-Plug 'posva/vim-vue'
-
-" html补全
-Plug 'mattn/emmet-vim'
-
-" vim 多光标
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-"
-" 主题颜色
-Plug 'connorholyday/vim-snazzy'
-"
-" vim-airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-"
-" icon
-Plug 'ryanoasis/vim-devicons'
-
-" building CMake projects inside of Vim/Neovim
-Plug 'cdelledonne/vim-cmake'
-
-call plug#end()
