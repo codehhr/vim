@@ -55,14 +55,14 @@ Plug 'mattn/emmet-vim'
 
 " vim 多光标
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-"
+
 " 主题颜色
 Plug 'connorholyday/vim-snazzy'
 
 " vim-airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"
+
 " icon
 Plug 'ryanoasis/vim-devicons'
 
