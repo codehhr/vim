@@ -463,13 +463,13 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 "====================================================================
 "
 set laststatus=2			" 始终显示状态栏
-" let g:powerline_pycmd="py3"
+let g:powerline_pycmd="py3"
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='bubblegum'
 set t_Co=256				"在windows中用xshell连接打开vim可以显示色彩
 " tabline 样式
 let g:airline#extensions#tabline#formatter = 'default'
-"powerline symbols
+" powerline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -573,10 +573,10 @@ Plug 'wavded/vim-stylus'
 
 "Vastly improved Javascript indentation and syntax support in Vim.
 Plug 'pangloss/vim-javascript'
-
+"
 "coc.vim 补全
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+"
 "注释工具
 Plug 'scrooloose/nerdcommenter'
 
@@ -585,9 +585,6 @@ Plug 'luochen1990/rainbow'
 
 "展示当前文件的函数
 Plug 'majutsushi/tagbar'
-
-"highlight for c++
-Plug 'octol/vim-cpp-enhanced-highlight'
 
 "indentLine
 Plug 'Yggdroot/indentLine'
@@ -609,21 +606,18 @@ Plug 'mattn/emmet-vim'
 
 " vim 多光标
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-
+"
 " 主题颜色
 Plug 'connorholyday/vim-snazzy'
-
+"
 " vim-airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
+"
 " icon
 Plug 'ryanoasis/vim-devicons'
 
 " building CMake projects inside of Vim/Neovim
 Plug 'cdelledonne/vim-cmake'
-
-" git plugin
-Plug 'tpope/vim-fugitive'
 
 call plug#end()
