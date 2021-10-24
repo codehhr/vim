@@ -105,6 +105,7 @@
 	"explorer.icon.enableNerdfont": true,
 	"explorer.keyMappingMode": "none",
 	"explorer.buffer.showHiddenBuffers": false,
+	"explorer.position": "right",
 	"explorer.keyMappings.global": {
 		"w": "toggleSelection",
 		"M": "actionMenu",
