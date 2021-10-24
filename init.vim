@@ -225,7 +225,7 @@ endfunction
 if has('nvim')
   inoremap <silent><expr> <C-TAB> coc#refresh()
 else
-  inoremap <silent><expr> <C-TAB> coc#refresh()
+  inoremap <silent><expr> <C-@> coc#refresh()
 endif
 
 
@@ -266,8 +266,8 @@ nmap <space>n <Plug>(coc-rename)
 function! s:cocActionOpenFromSelectd(type) abort
 	execute 'CocCommand actions.open ' . a:type
 endfunction
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <space>s <Plug>(coc-format-selected)
+nmap <space>s <Plug>(coc-format-selected)
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -405,7 +405,6 @@ let g:indent_guides_start_level = 2  " 从第二层开始可视化显示缩进
 let g:mkdp_path_to_chrome = "google-chrome-stable"
 " 设置 chrome 浏览器的路径（或是启动 chrome（或其他现代浏览器）的命令）
 " 如果设置了该参数, g:mkdp_browserfunc 将被忽略
-
 let g:mkdp_browserfunc = 'MKDP_browserfunc_default'
 " vim 回调函数, 参数为要打开的 url
 
