@@ -203,6 +203,8 @@ set nowrap
 "=========================== NerdTree ===============================
 "==================================================================== 
 "
+" Now I'm using coc-explorer, not NerdTree
+"
 "将F2设置为开关NERDTree的快捷键
 " map ss :NERDTreeToggle<cr> ( ss for coc-explorer )
 map <C-\> :NERDTreeToggle<cr>
@@ -242,7 +244,6 @@ let g:coc_global_extensions = [
 	\ 'coc-flutter-tools', 
 	\ 'coc-tslint', 
 	\ 'coc-eslint', 
-	\ 'coc-todolist', 
 	\ 'coc-actions', 
 	\ 'coc-vetur']
 
@@ -385,6 +386,7 @@ nmap <space>m :CocList marketplace<CR>
 nmap <space>c :tabnew<CR>:CocConfig<CR>
 " list CocCommand
 nmap <space>d :CocCommand<CR>
+" open explorer ( like NerdTree )
 nmap ss :CocCommand explorer<CR>
 
 " "====================================================================
