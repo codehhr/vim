@@ -111,7 +111,7 @@
 		"o": ["wait", "expandable?", "expand", "open"],
 		"S": ["wait", "expandable?", "cd", "open"],
 		"<cr>": ["wait", "expandable?", "cd", "open"],
-		"N": "open:split",
+		"N": "open:vsplit",
 		"l": ["wait", "expanded?", "collapse", "expand"],
 		"n": "open:tab",
 		"h": "collapse",
