@@ -1,5 +1,4 @@
-"	                              _
-"	 _ __ ___  _   _   _ ____   _(_)_ __ ___  _ __ ___
+"	                              _	 _ __ ___  _   _   _ ____   _(_)_ __ ___  _ __ ___
 "	| '_ ` _ \| | | | | '_ \ \ / / | '_ ` _ \| '__/ __|
 "	| | | | | | |_| | | | | \ V /| | | | | | | | | (__
 "	|_| |_| |_|\__, | |_| |_|\_/ |_|_| |_| |_|_|  \___|
@@ -104,7 +103,8 @@ set encoding=utf-8					"使用utf-8编码, Set internal encoding of vim, not nee
 set number							"显示行号 
 set showcmd							"显示输入命令 
 set nolist							"不显示隐藏字符
-set listchars=tab:--,trail:♫		"切换显示隐藏字符 (tab & trail characters)
+set listchars=tab:--,trail:♫
+"切换显示隐藏字符 (tab & trail characters)
 map zh :set list!<CR>
 set clipboard+=unnamed,unnamedplus	"可以从vim复制到剪贴版中 
 set mouse=a							"可以在buffer的任何地方使用鼠标 
@@ -129,7 +129,7 @@ set shiftwidth=4					"设置自动对齐的缩进级别
 set cindent							"自动缩进,以c语言风格，例如从if进入下一行，会自动缩进shiftwidth大小 
 set smartindent						"改进版的cindent,自动识别以#开头的注释，不进行换行 
 set autoindent						"autoindent配合下面一条命令根据不同语言类型进行不同的缩进操作，更加智能 
-filetype plugin indent on 
+filetype plugin indent on
 set nowrap 
 
 "==================================================================== 
@@ -150,18 +150,6 @@ let g:NERDTreeSize=30
 let g:NERDTreeShowLineNumbers=1
 "不显示隐藏文件
 let g:NERDTreeHidden=0
-" let g:NERDTreeIndicatorMapCustom = {
-"      'Modified' : '✹',
-"      'Staged'    : '✚',
-"      'Untracked' : '✭',
-"      'Renamed'   : '➜',
-"      'Unmerged'  : '═',
-"      'Deleted'   : '✖',
-"      'Dirty'     : '✗',
-"      'Clean'     : '✔︎',
-"      'Ignored'   : '☒',
-"      'Unknown'   : '?'
-"      }
 
 "==================================================================== 
 "=========================== coc 代码补全 ===========================
@@ -234,10 +222,12 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" Use `--` and `==` to navigate diagnostics ( -*2 ; =*2 )
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+" Use `--` and `==` to navigate diagnostics
 nmap <silent> -- <Plug>(coc-diagnostic-prev)
 nmap <silent> == <Plug>(coc-diagnostic-next)
+
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap [p :CocDiagnostics<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)

@@ -1,4 +1,5 @@
 {
+	"vetur.ignoreProjectWarning": true,
 	"prismaLanguageServer.prismaFmtBinPath": "",
 	"coc.preferences.semanticTokensHighlights": false,
 	"coc.preferences.enableFloatHighlight": true,
