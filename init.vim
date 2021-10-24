@@ -22,10 +22,10 @@ Plug 'wavded/vim-stylus'
 
 "Vastly improved Javascript indentation and syntax support in Vim.
 Plug 'pangloss/vim-javascript'
-"
+
 "coc.vim 补全
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"
+
 "注释工具
 Plug 'scrooloose/nerdcommenter'
 
@@ -388,25 +388,6 @@ nmap <space>c :tabnew<CR>:CocConfig<CR>
 nmap <space>d :CocCommand<CR>
 " open explorer ( like NerdTree )
 nmap ss :CocCommand explorer<CR>
-
-" "====================================================================
-" "============================ coc translate =========================
-" "====================================================================
-" "
-" " NOTE: do NOT use `nore` mappings
-" " popup
-" nmap tr <Plug>(coc-translator-p)
-" vmap tr <Plug>(coc-translator-pv)
-" " echo
-" nmap te <Plug>(coc-translator-e)
-" vmap te <Plug>(coc-translator-ev)
-" " replace
-" nmap TR <Plug>(coc-translator-r)
-" vmap TR <Plug>(coc-translator-rv)
-"
-" " :CocList translation
-" nmap tl :CocList translation<CR>
-
 
 "==================================================================== 
 "===================== nerdcommenter 注释工具 =======================
