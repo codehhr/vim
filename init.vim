@@ -18,8 +18,8 @@ map R :source $MYVIMRC<CR>
 " jj for ESC
 imap jj <ESC>
 
-"formawt doc
-map F gg=G<C-o>
+" fzf
+map <space>f :FZF<CR>
 
 "go to #define
 map <F12> [<c-i>
@@ -53,13 +53,13 @@ map <C-l> :vertical resize +5<CR>
 "    sj
 
 "up
-map su <C-w>k 
+map sk <C-w>k 
 "dowm
 map sj <C-w>j
 "let
 map sh <C-w>h
 "right
-map sk <C-w>l
+map sl <C-w>l
 
 "标签
 "新建标签
@@ -245,8 +245,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use <C-d> to show documentation in preview window.
-nnoremap <silent> <C-d> :call <SID>show_documentation()<CR>
+" Use <C-a> to show documentation in preview window.
+nnoremap <silent> <C-a> :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -531,7 +531,7 @@ let g:translator_target_lang = 'zh'
 let g:translator_source_lang = 'auto'
 " default: If g:translator_target_lang is 'zh', this will be ['bing', 'google', 'haici', 'youdao'], otherwise ['google']
 " available: 'bing', 'google', 'haici', 'iciba'(expired), 'sdcv', 'trans', 'youdao'
-let g:translator_default_engines = ['youdao', 'bing']
+let g:translator_default_engines = ['bing', 'youdao']
 " let g:translator_proxy_url = 'socks5://127.0.0.1:4781'
 let g:translator_history_enable = v:true
 " available: 'popup'(use floatwin in nvim or popup in vim), 'preview'
@@ -549,14 +549,18 @@ let g:translator_window_borderchars = ['─', '│', '─', '│', '┌', '┐',
 " Echo translation in the cmdline
 nmap <silent> te <Plug>Translate
 vmap <silent> te <Plug>TranslateV
+"
 " Display translation in a window
 nmap <silent> tr <Plug>TranslateW
 vmap <silent> tr <Plug>TranslateWV
+"
 " Replace the text with translation
-nmap <silent> TR <Plug>TranslateR
-vmap <silent> TR <Plug>TranslateRV
+" nmap <silent> TR <Plug>TranslateR
+" vmap <silent> TR <Plug>TranslateRV
+"
 " Translate the text in clipboard
-nmap <silent> tx <Plug>TranslateX
+" nmap <silent> tx <Plug>TranslateX
+"
 " there is a function which can be used to scroll window, only works in neovim.
 nnoremap <silent><expr> <M-f> translator#window#float#has_scroll() ?
                             \ translator#window#float#scroll(1) : "\<M-f>"

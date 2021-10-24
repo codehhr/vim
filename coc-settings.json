@@ -1,5 +1,4 @@
 {
-	"prisma.prismaFmtBinPath": "",
 	"prismaLanguageServer.prismaFmtBinPath": "",
 	"coc.preferences.semanticTokensHighlights": false,
 	"coc.preferences.enableFloatHighlight": true,
@@ -48,7 +47,6 @@
 		"value": "\uf89f",
 		"variable": "\ue71b"
 	},
-	"diagnostic.signOffset": 1,
 	"diagnostic.errorSign": "\uf467",
 	"diagnostic.warningSign": "\uf071",
 	"diagnostic.infoSign": "\uf129",
@@ -110,14 +108,13 @@
 	"explorer.keyMappings.global": {
 		"<space>": "toggleSelection",
 		"<tab>": "actionMenu",
-		"L": "expandRecursive",
-		"C": "collapseRecursive",
-		"h": ["wait", "expandable?", "expand", "open"],
+		"o": ["wait", "expandable?", "expand", "open"],
+		"S": ["wait", "expandable?", "cd", "open"],
 		"<cr>": ["wait", "expandable?", "cd", "open"],
-		"N": "open:vsplit",
+		"N": "open:split",
 		"l": ["wait", "expanded?", "collapse", "expand"],
 		"n": "open:tab",
-		"c": "collapse",
+		"h": "collapse",
 		"H": "gotoParent",
 		"<C-l>": "copyFilepath",
 		"yn": "copyFilename",
