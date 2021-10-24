@@ -172,8 +172,6 @@
 	"prettier.useTabs": true,
 	"prettier.trailingComma": "all",
 	"prettier.singleQuote": false,
-	"todolist.autoUpload": true,
-	"todolist.promptForReminder": false,
 	"coc-actions.hideCursor": false,
 	"coc-actions.showActionKind": true,
 	"diagnostic-languageserver.filetypes": {
