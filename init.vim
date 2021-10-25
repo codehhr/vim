@@ -11,8 +11,8 @@
 "
 call plug#begin('~/.config/nvim/plugged')
 
-"nerdtree 左侧打开文件目录
-Plug 'preservim/nerdtree'
+" startify
+Plug 'mhinz/vim-startify'
 
 "css/less/sass/html color preview for vim
 Plug 'gorodinskiy/vim-coloresque'
@@ -142,6 +142,12 @@ map e :edit<space>
 map <C-c> :! node %<CR>
 
 "==================================================================== 
+"============================ vim-startify ==========================
+"==================================================================== 
+"
+let g:startify_padding_left = 20
+
+"==================================================================== 
 "======================== vim 配色 ================================== 
 "==================================================================== 
 "
@@ -159,14 +165,20 @@ colorscheme snazzy
 "
 set nocompatible					"去除VIM一致性，必须
 filetype on
+filetype plugin indent on
 set nofoldenable					"启动 vim 时关闭折叠代码"
 set diffopt+=vertical				" 垂直窗口 git diff"
 " 打开 vim 时自动打开 NERDTree
 " autocmd vimenter * NERDTree | wincmd p
-set scrolloff=8
+set scrolloff=8						"垂直滚动光标留出空余
+set sidescrolloff=20				" 水平滚动光标留出空余
 map re :set relativenumber!<CR>
 set nocompatible					"vim比vi支持更多的功能，如showcmd，避免冲突和副作用，最好关闭兼容 
 set encoding=utf-8					"使用utf-8编码, Set internal encoding of vim, not needed on neovim, since coc.nvim using some
+set fileencoding=utf-8
+set fileencodings=utf-8,gbk
+set fileformat=unix
+set fileformats=unix,dos,mac
 set number							"显示行号 
 set showcmd							"显示输入命令 
 set nolist							"不显示隐藏字符
@@ -185,40 +197,15 @@ set ruler							"显示行号和列号（默认打开)
 set pastetoggle=<F3>				"F3快捷键于paste模式与否之间转化，防止自动缩进 
 " set helplang=cn					"设置为中文帮助文档,需下载并配置之后才生效
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif  "打开上次编辑位置"
-
-"==================================================================== 
-"========================== 文本格式排版 ============================
-"==================================================================== 
-"
 set tabstop=4						"设置tab长度为4 
 set softtabstop=4
 set shiftwidth=4					"设置自动对齐的缩进级别 
 set cindent							"自动缩进,以c语言风格，例如从if进入下一行，会自动缩进shiftwidth大小 
 set smartindent						"改进版的cindent,自动识别以#开头的注释，不进行换行 
 set autoindent						"autoindent配合下面一条命令根据不同语言类型进行不同的缩进操作，更加智能 
-filetype plugin indent on
-set nowrap 
-
-"==================================================================== 
-"=========================== NerdTree ===============================
-"==================================================================== 
-"
-" Now I'm using coc-explorer, not NerdTree
-"
-"将F2设置为开关NERDTree的快捷键
-" map ss :NERDTreeToggle<cr> ( ss for coc-explorer )
-map <C-\> :NERDTreeToggle<cr>
-"修改树的显示图标
-" let g:NERDTreeDirArrowExpandable = '+'
-" let g:NERDTreeDirArrowCollapsible = '-'
-"窗口位置
-let g:NERDTreeWinPos='left'
-"窗口尺寸
-let g:NERDTreeSize=30
-"窗口是否显示行号
-let g:NERDTreeShowLineNumbers=1
-"不显示隐藏文件
-let g:NERDTreeHidden=0
+set nowrap							"不换行"
+set noerrorbells					"no bell on error"
+set wildmenu
 
 "==================================================================== 
 "=========================== coc 代码补全 ===========================
@@ -251,10 +238,9 @@ let g:coc_global_extensions = [
 set hidden
 
 " Some servers have issues with backup files, see #649.
-" set nobackup
-" set nowritebackup
-
-" set cmdheight=1						" 底部 cmd height
+set nobackup
+set nowritebackup
+set cmdheight=1						" 底部 cmd height
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -512,20 +498,52 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 "======================== vim-airline ===============================
 "====================================================================
 "
-set laststatus=2			" 始终显示状态栏
+set laststatus=2										" 是否显示状态栏,0 表示不显示，1 表示只在多窗口时显示，2 表示显示
+" let g:airline_theme="peaksea"							" airline_theme
+let g:airline_theme="deus"
+" let g:airline_theme="bubblegum"
+let g:airline_powerline_fonts = 1						"支持 powerline 字体,1表示支持
 let g:powerline_pycmd="py3"
-let g:airline#extensions#tabline#enabled=1
-let g:airline_theme='bubblegum'
-set t_Co=256				"在windows中用xshell连接打开vim可以显示色彩
-" tabline 样式
+let g:airline#extensions#virtualenv#enabled = 1			" virtual env
+let g:airline#extensions#whitespace#enabled = 0			" 空白符号计数"
+let g:airline#extensions#whitespace#symbol = '[]'
+let g:airline#extensions#tabline#exclude_preview = 1
 let g:airline#extensions#tabline#formatter = 'default'
-" powerline symbols
+" let g:airline#extensions#keymap#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffer_idx_format = {
+			\ '0': '⑩ ',
+			\ '1': '① ',
+			\ '2': '② ',
+			\ '3': '③ ',
+			\ '4': '④ ',
+			\ '5': '⑤ ',
+			\ '6': '⑥ ',
+			\ '7': '⑦ ',
+			\ '8': '⑧ ',
+			\ '9': '⑨ '
+			\}
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = " [" " current line
+let g:airline_symbols.maxlinenr = '] ' "maxline
+let g:airline_symbols.readonly = "[readonly]"
+let g:airline_symbols.dirty = "⚡"
+let g:airline_symbols.crypt = "crypt"
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#hunks#enabled=0
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.space = "\ua0"
+let g:airline#extensions#tabline#enabled=1
+set t_Co=256				"在windows中用xshell连接打开vim可以显示色彩
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+
 
 "====================================================================
 "============================= vim-rainbow =========================
