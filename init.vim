@@ -67,7 +67,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 
 " building CMake projects inside of Vim/Neovim
-Plug 'cdelledonne/vim-cmake'
+" Plug 'cdelledonne/vim-cmake'
 
 call plug#end()
 
@@ -510,19 +510,29 @@ let g:airline#extensions#whitespace#symbol = '[]'
 let g:airline#extensions#tabline#exclude_preview = 1
 let g:airline#extensions#tabline#formatter = 'default'
 " let g:airline#extensions#keymap#enabled = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#tabline#buffer_idx_format = {
-			\ '0': '⑩ ',
-			\ '1': '① ',
-			\ '2': '② ',
-			\ '3': '③ ',
-			\ '4': '④ ',
-			\ '5': '⑤ ',
-			\ '6': '⑥ ',
-			\ '7': '⑦ ',
-			\ '8': '⑧ ',
-			\ '9': '⑨ '
-			\}
+" let g:airline#extensions#tabline#buffer_idx_mode = 1
+" let g:airline#extensions#tabline#buffer_idx_format = {
+"             \ '0': '[0]',
+"             \ '1': '[1]',
+"             \ '2': '[2]',
+"             \ '3': '[3]',
+"             \ '4': '[4]',
+"             \ '5': '[5]',
+"             \ '6': '[6]',
+"             \ '7': '[7]',
+"             \ '8': '[8]',
+"             \ '9': '[9]',
+"             \}
+"             " \ '0': '⑩ ',
+"             " \ '1': '① ',
+"             " \ '2': '② ',
+"             " \ '3': '③ ',
+"             " \ '4': '④ ',
+"             " \ '5': '⑤ ',
+"             " \ '6': '⑥ ',
+"             " \ '7': '⑦ ',
+"             " \ '8': '⑧ ',
+"             " \ '9': '⑨ '
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
@@ -592,6 +602,7 @@ let g:translator_default_engines = ['bing', 'youdao']
 " let g:translator_proxy_url = 'socks5://127.0.0.1:4781'
 let g:translator_history_enable = v:true
 " available: 'popup'(use floatwin in nvim or popup in vim), 'preview'
+"
 " default: use <C-w>p to jump into popup window and to jump back
 map <C-p> <C-w>p
 let g:translator_window_type = 'popup'
