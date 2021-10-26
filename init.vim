@@ -75,6 +75,9 @@ Plug 'tpope/vim-surround'
 " 括号自动补全
 Plug 'Raimondi/delimitMate'
 
+" snippets
+Plug 'honza/vim-snippets'
+
 call plug#end()
 
 "==================================================================== 
