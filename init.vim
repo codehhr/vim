@@ -194,7 +194,7 @@ set showcmd							"显示输入命令
 set nolist							"不显示隐藏字符
 set listchars=tab:--,trail:♫
 "切换显示隐藏字符 (tab & trail characters)
-map zh :set list!<CR>
+noremap zh :set list!<CR>
 set clipboard+=unnamed,unnamedplus	"可以从vim复制到剪贴版中 
 set mouse=a							"可以在buffer的任何地方使用鼠标 
 set cursorline						"高亮当前行 
