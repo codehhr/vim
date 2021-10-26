@@ -72,6 +72,9 @@ Plug 'ryanoasis/vim-devicons'
 " vim-surround
 Plug 'tpope/vim-surround'
 
+" 括号自动补全
+Plug 'Raimondi/delimitMate'
+
 call plug#end()
 
 "==================================================================== 
