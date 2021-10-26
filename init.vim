@@ -69,6 +69,9 @@ Plug 'ryanoasis/vim-devicons'
 " building CMake projects inside of Vim/Neovim
 " Plug 'cdelledonne/vim-cmake'
 
+" vim-surround
+Plug 'tpope/vim-surround'
+
 call plug#end()
 
 "==================================================================== 
@@ -176,7 +179,8 @@ map re :set relativenumber!<CR>
 set nocompatible					"vim比vi支持更多的功能，如showcmd，避免冲突和副作用，最好关闭兼容 
 set encoding=utf-8					"使用utf-8编码, Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 set fileencoding=utf-8
-set fileencodings=utf-8,gbk
+set termencoding=utf-8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set fileformat=unix
 set fileformats=unix,dos,mac
 set number							"显示行号 
@@ -634,3 +638,18 @@ nnoremap <silent><expr> <M-f> translator#window#float#has_scroll() ?
                             \ translator#window#float#scroll(1) : "\<M-f>"
 nnoremap <silent><expr> <M-b> translator#window#float#has_scroll() ?
                             \ translator#window#float#scroll(0) : "\<M-f>"
+
+"====================================================================
+"============================ vim-surround ==============================
+"====================================================================
+"
+" like [Hello] world!
+nmap <space>] :normal ysiw]<CR>
+" like {hello} world!
+nmap <space>} :normal ysiw}<CR>
+" like { hello } world!
+nmap <space>{ :normal ysiw{<CR>
+" like (hello world!)
+nmap <space>( :normal yss)<CR>
+nmap <space>) :normal yss)<CR>
+" Replacing cs with S in visual mode
