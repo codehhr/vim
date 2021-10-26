@@ -1,0 +1,31 @@
+# user mapState in computed
+snippet mapS "mapState"
+	...mapState({
+		${1:state_name}: "${2:state_name}",
+	}),
+endsnippet
+
+# import mapState
+snippet imapS "import mapState"
+	import { mapState } from "vuex";
+endsnippet
+
+# data
+snippet da "vue data"
+	data() {
+		return {
+			${1:key}: "${2:value}",
+			${0:${VISUAL}}
+		};
+	},
+endsnippet
+
+# reset default style
+snippet rede "reset default style"
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+${0:${VISUAL}}
+endsnippet
