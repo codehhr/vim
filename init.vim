@@ -198,6 +198,8 @@ noremap zh :set list!<CR>
 set clipboard+=unnamed,unnamedplus	"可以从vim复制到剪贴版中 
 set mouse=a							"可以在buffer的任何地方使用鼠标 
 set cursorline						"高亮当前行 
+" 切换显示高亮列
+noremap lc :set cursorcolumn!<CR>
 set hlsearch						"显示高亮搜索 
 set incsearch						"增量高亮搜索"
 set smartcase						"智能大小写"
