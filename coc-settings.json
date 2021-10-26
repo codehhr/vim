@@ -19,7 +19,7 @@
 	"suggest.enablePreview": true,
 	"suggest.floatEnable": true,
 	"suggest.detailField": "preview",
-	"suggest.snippetIndicator": "",
+	"suggest.snippetIndicator": "</>",
 	"suggest.triggerCompletionWait": 100,
 	"suggest.echodocSupport": true,
 	"suggest.completionItemKindLabels": {
@@ -65,10 +65,7 @@
 	"importCost.javascriptExtensions": ["\\.jsx?$"],
 	"importCost.showCalculatingDecoration": true,
 	"importCost.debug": false,
-	"snippets.ultisnips.directories": [
-		"$HOME/.config/nvim/Ultisnips/",
-		"$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
-	],
+	"snippets.userSnippetsDirectory": "$HOME/.config/nvim/snippets",
 	"coc.preferences.formatOnSaveFiletypes": [
 		"javascript",
 		"typescript",
