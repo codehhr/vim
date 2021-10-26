@@ -1,0 +1,30 @@
+# Asynchronous Function
+snippet asf "async function"
+	async function ${1:function_name}(${2}) {
+		${0:${VISUAL}}
+	}
+
+# switch case
+snippet swi "switch case"
+	switch (${1:expression}) {
+		case '${3:case}':
+			${4}
+			break;
+		${0}
+		default:
+			${2}
+	}
+
+# try catch
+snippet try "try { ... } catch(e) { ... }"
+	try {
+		${0:${VISUAL}}
+	} catch (${1:e}) {
+		${2:/* handle error */}
+	}
+
+# For in loop
+snippet fori "for in loop"
+	for (let ${1:prop} in ${2:object}) {
+		${0:$2[$1]}
+	}
