@@ -379,15 +379,15 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 "CocList
-nmap <space>l :CocList<CR>
+noremap <space>l :CocList<CR>
 "open coc marketplace (打开取决于网速)
-nmap <space>m :CocList marketplace<CR>
+noremap <space>m :CocList marketplace<CR>
 "open CocConfig.json
-nmap <space>c :tabnew<CR>:CocConfig<CR>
+noremap <space>c :tabnew<CR>:CocConfig<CR>
 " list CocCommand
-nmap <space>d :CocCommand<CR>
+noremap <space>d :CocCommand<CR>
 " open explorer ( like NerdTree )
-nmap ss :CocCommand explorer<CR>
+noremap ss :CocCommand explorer<CR>
 
 "==================================================================== 
 "===================== nerdcommenter 注释工具 =======================
