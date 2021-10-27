@@ -655,11 +655,15 @@ nnoremap <silent><expr> <M-b> translator#window#float#has_scroll() ?
 "
 " like [Hello] world!
 nmap <space>] :normal ysiw]<CR>
+" like [ Hello ] world!
+nmap <space>[ :normal ysiw[<CR>
 " like {hello} world!
 nmap <space>} :normal ysiw}<CR>
 " like { hello } world!
 nmap <space>{ :normal ysiw{<CR>
 " like (hello world!)
-nmap <space>( :normal yss)<CR>
 nmap <space>) :normal yss)<CR>
+" like ( hello world! )
+nmap <space>( :normal yss(<CR>
+" 
 " Replacing cs with S in visual mode
