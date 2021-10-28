@@ -639,3 +639,10 @@ nmap <space>) :normal yss)<CR>
 nmap <space>( :normal yss(<CR>
 " 
 " Replacing cs with S in visual mode
+
+"====================================================================
+"============================= fzf ==================================
+"====================================================================
+"
+noremap <space>f :Files<CR>
+noremap <space>b :Buffers<CR>
