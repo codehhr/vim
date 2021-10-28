@@ -77,6 +77,11 @@ Plug 'Raimondi/delimitMate'
 " snippets
 Plug 'honza/vim-snippets'
 
+"fuzzy file finder
+" Ag depends on the_silver_seacher
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 "==================================================================== 
