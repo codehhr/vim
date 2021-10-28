@@ -97,9 +97,6 @@ map R :source $MYVIMRC<CR>
 " jj for ESC
 imap jj <ESC>
 
-" fzf
-map <space>f :FZF<CR>
-
 "go to #define
 map <F12> [<c-i>
 
@@ -109,22 +106,22 @@ map H 5h
 map L 5l
 
 "向右分屏,光标在右
-map sd :set splitright<CR>:vsplit<CR>
+noremap sd :set splitright<CR>:vsplit<CR>
 
 "向左分屏,光标在左
-map sa :set nosplitright<CR>:vsplit<CR>
+noremap sa :set nosplitright<CR>:vsplit<CR>
 
 "向上分屏,光标在上
-map sw :set nosplitbelow<CR>:split<CR>
+noremap sw :set nosplitbelow<CR>:split<CR>
 
 "向下分屏,光标在下
-map sx :set splitbelow<CR>:split<CR>
+noremap sx :set splitbelow<CR>:split<CR>
 
 "调整分屏大小
-map <C-k> :res +5<CR>
-map <C-j> :res -5<CR>
-map <C-h> :vertical resize -5<CR>
-map <C-l> :vertical resize +5<CR>
+noremap <C-k> :res +5<CR>
+noremap <C-j> :res -5<CR>
+noremap <C-h> :vertical resize -5<CR>
+noremap <C-l> :vertical resize +5<CR>
 
 "光标在分屏之间移动
 "    su
@@ -142,17 +139,17 @@ map sl <C-w>l
 
 "标签
 "新建标签
-map <C-t> :tabnew<space>
+noremap <C-t> :tabnew<space>
 "tabnext ( Tab )
-nmap <TAB> :tabn<CR>
+noremap <TAB> :tabn<CR>
 "tabprevious ( shift + Tab )
-nmap <S-TAB> :tabp<CR>
+noremap <S-TAB> :tabp<CR>
 
 "打开文件
-map e :edit<space>
+noremap e :edit<space>
 
 "exec node
-map <C-c> :! node %<CR>
+noremap <C-c> :! node %<CR>
 
 "==================================================================== 
 "============================ vim-startify ==========================
@@ -183,8 +180,8 @@ set nofoldenable					"启动 vim 时关闭折叠代码"
 set diffopt+=vertical				" 垂直窗口 git diff"
 " 打开 vim 时自动打开 NERDTree
 " autocmd vimenter * NERDTree | wincmd p
-set scrolloff=8						"垂直滚动光标留出空余
-set sidescrolloff=20				" 水平滚动光标留出空余
+set scrolloff=5						"垂直滚动光标留出空余
+set sidescrolloff=10				" 水平滚动光标留出空余
 map re :set relativenumber!<CR>
 set nocompatible					"vim比vi支持更多的功能，如showcmd，避免冲突和副作用，最好关闭兼容 
 set encoding=utf-8					"使用utf-8编码, Set internal encoding of vim, not needed on neovim, since coc.nvim using some
@@ -196,7 +193,7 @@ set fileformats=unix,dos,mac
 set number							"显示行号 
 set showcmd							"显示输入命令 
 set nolist							"不显示隐藏字符
-set listchars=tab:--,trail:♫
+set listchars=tab:->,trail:-
 "切换显示隐藏字符 (tab & trail characters)
 noremap zh :set list!<CR>
 set clipboard+=unnamed,unnamedplus	"可以从vim复制到剪贴版中 
@@ -216,12 +213,15 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 set tabstop=4						"设置tab长度为4 
 set softtabstop=4
 set shiftwidth=4					"设置自动对齐的缩进级别 
+set expandtab
+set smarttab
 set cindent							"自动缩进,以c语言风格，例如从if进入下一行，会自动缩进shiftwidth大小 
 set smartindent						"改进版的cindent,自动识别以#开头的注释，不进行换行 
 set autoindent						"autoindent配合下面一条命令根据不同语言类型进行不同的缩进操作，更加智能 
 set nowrap							"不换行"
 set noerrorbells					"no bell on error"
 set wildmenu
+set termguicolors                   " Enable True Color Support (ensure you're using a 256-color enabled $TERM, e.g. xterm-256color)
 
 "==================================================================== 
 "=========================== coc 代码补全 ===========================
@@ -390,8 +390,9 @@ noremap <space>m :CocList marketplace<CR>
 noremap <space>c :tabnew<CR>:CocConfig<CR>
 " list CocCommand
 noremap <space>d :CocCommand<CR>
-" open explorer ( like NerdTree )
+" open explorer
 noremap ss :CocCommand explorer<CR>
+noremap <C-\> :CocCommand explorer<CR>
 
 "==================================================================== 
 "===================== nerdcommenter 注释工具 =======================
@@ -424,7 +425,7 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 "==================================================================== 
-"=================== tagbar 展示当前文件的一些函数 ==================
+"=================== tagbar ==================
 "==================================================================== 
 "
 let g:tagbar_width=30
@@ -440,6 +441,8 @@ nnoremap <silent> sf :TagbarToggle<CR>
 let g:indentLine_char='┆'
 let g:indentLine_enabled = 1
 let g:indent_guides_start_level = 2  " 从第二层开始可视化显示缩进
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 "====================================================================
 "======================== markdown-preview ==========================
@@ -517,40 +520,11 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 "====================================================================
 "
 set laststatus=2										" 是否显示状态栏,0 表示不显示，1 表示只在多窗口时显示，2 表示显示
-" let g:airline_theme="peaksea"							" airline_theme
+set t_Co=256				                            "在windows中用xshell连接打开vim可以显示色彩
 let g:airline_theme="deus"
 " let g:airline_theme="bubblegum"
-let g:airline_powerline_fonts = 1						"支持 powerline 字体,1表示支持
+let g:airline_powerline_fonts = 1						"支持 powerline 字体
 let g:powerline_pycmd="py3"
-let g:airline#extensions#virtualenv#enabled = 1			" virtual env
-let g:airline#extensions#whitespace#enabled = 0			" 空白符号计数"
-let g:airline#extensions#whitespace#symbol = '[]'
-let g:airline#extensions#tabline#exclude_preview = 1
-let g:airline#extensions#tabline#formatter = 'default'
-" let g:airline#extensions#keymap#enabled = 1
-" let g:airline#extensions#tabline#buffer_idx_mode = 1
-" let g:airline#extensions#tabline#buffer_idx_format = {
-"             \ '0': '[0]',
-"             \ '1': '[1]',
-"             \ '2': '[2]',
-"             \ '3': '[3]',
-"             \ '4': '[4]',
-"             \ '5': '[5]',
-"             \ '6': '[6]',
-"             \ '7': '[7]',
-"             \ '8': '[8]',
-"             \ '9': '[9]',
-"             \}
-"             " \ '0': '⑩ ',
-"             " \ '1': '① ',
-"             " \ '2': '② ',
-"             " \ '3': '③ ',
-"             " \ '4': '④ ',
-"             " \ '5': '⑤ ',
-"             " \ '6': '⑥ ',
-"             " \ '7': '⑦ ',
-"             " \ '8': '⑧ ',
-"             " \ '9': '⑨ '
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
@@ -564,17 +538,11 @@ let g:airline#extensions#hunks#enabled=0
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#tabline#enabled=1
-set t_Co=256				"在windows中用xshell连接打开vim可以显示色彩
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-
+" let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
+let g:airline_section_warning = 0
 
 "====================================================================
-"============================= vim-rainbow =========================
+"============================= vim-rainbow ==========================
 "====================================================================
 "
 let g:rainbow_active = 1
