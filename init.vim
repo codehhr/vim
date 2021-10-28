@@ -644,5 +644,5 @@ nmap <space>( :normal yss(<CR>
 "============================= fzf ==================================
 "====================================================================
 "
-noremap <space>f :Files<CR>
+noremap <space>z :Files<CR>
 noremap <space>b :Buffers<CR>
