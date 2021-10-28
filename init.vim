@@ -531,11 +531,11 @@ endif
 let g:airline_symbols.linenr = " [" " current line
 let g:airline_symbols.maxlinenr = '] ' "maxline
 let g:airline_symbols.readonly = "[readonly]"
-let g:airline_symbols.dirty = "⚡"
-let g:airline_symbols.crypt = "crypt"
+let g:airline_symbols.dirty = "[dirty]"
+let g:airline_symbols.crypt = "[crypt]"
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#hunks#enabled=0
-let g:airline_symbols.branch = '⎇'
+let g:airline#extensions#hunks#enabled = 1
+let g:airline_symbols.branch = "⎇"
 let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#tabline#enabled=1
 " let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
