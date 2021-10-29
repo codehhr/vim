@@ -89,33 +89,30 @@ call plug#end()
 "==================================================================== 
 "
 " let mapleader = \ ( leader 默认就是 \ )
-map s <nop>
-map S :w<CR>
-map Q :q!<CR>
-map R :source $MYVIMRC<CR>
+nnoremap s <nop>
+nnoremap S :w<CR>
+nnoremap Q :q!<CR>
+nnoremap R :source $MYVIMRC<CR>
 
 " jj for ESC
-imap jj <ESC>
+inoremap jj <ESC>
 
-"go to #define
-map <F12> [<c-i>
-
-map J 5j
-map K 5k
-map H 5h
-map L 5l
+nnoremap J 5j
+nnoremap K 5k
+nnoremap H 5h
+nnoremap L 5l
 
 "向右分屏,光标在右
-noremap sd :set splitright<CR>:vsplit<CR>
+nnoremap sd :set splitright<CR>:vsplit<CR>
 
 "向左分屏,光标在左
-noremap sa :set nosplitright<CR>:vsplit<CR>
+nnoremap sa :set nosplitright<CR>:vsplit<CR>
 
 "向上分屏,光标在上
-noremap sw :set nosplitbelow<CR>:split<CR>
+nnoremap sw :set nosplitbelow<CR>:split<CR>
 
 "向下分屏,光标在下
-noremap sx :set splitbelow<CR>:split<CR>
+nnoremap sx :set splitbelow<CR>:split<CR>
 
 "调整分屏大小
 noremap <C-k> :res +5<CR>
@@ -129,13 +126,13 @@ noremap <C-l> :vertical resize +5<CR>
 "    sj
 
 "up
-map sk <C-w>k 
+nnoremap sk <C-w>k 
 "dowm
-map sj <C-w>j
+nnoremap sj <C-w>j
 "let
-map sh <C-w>h
+nnoremap sh <C-w>h
 "right
-map sl <C-w>l
+nnoremap sl <C-w>l
 
 "标签
 "新建标签
@@ -182,7 +179,7 @@ set diffopt+=vertical				" 垂直窗口 git diff"
 " autocmd vimenter * NERDTree | wincmd p
 set scrolloff=5						"垂直滚动光标留出空余
 set sidescrolloff=10				" 水平滚动光标留出空余
-map re :set relativenumber!<CR>
+noremap re :set relativenumber!<CR>
 set nocompatible					"vim比vi支持更多的功能，如showcmd，避免冲突和副作用，最好关闭兼容 
 set encoding=utf-8					"使用utf-8编码, Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 set fileencoding=utf-8
@@ -204,7 +201,7 @@ noremap lc :set cursorcolumn!<CR>
 set hlsearch						"显示高亮搜索 
 set incsearch						"增量高亮搜索"
 set smartcase						"智能大小写"
-map <ESC> :nohlsearch<CR>
+noremap <ESC> :nohlsearch<CR>
 set history=100						"默认指令记录是20 
 set ruler							"显示行号和列号（默认打开) 
 set pastetoggle=<F3>				"F3快捷键于paste模式与否之间转化，防止自动缩进 
@@ -299,10 +296,11 @@ nmap <silent> -- <Plug>(coc-diagnostic-prev)
 nmap <silent> == <Plug>(coc-diagnostic-next)
 
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap [p :CocDiagnostics<CR>
+nnoremap [p :CocDiagnostics<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> <F12> <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
