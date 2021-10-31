@@ -97,10 +97,10 @@ nnoremap R :source $MYVIMRC<CR>
 " jj for ESC
 inoremap jj <ESC>
 
-nnoremap J 5j
-nnoremap K 5k
-nnoremap H 5h
-nnoremap L 5l
+map J 5j
+map K 5k
+map H 5h
+map L 5l
 
 "向右分屏,光标在右
 nnoremap sd :set splitright<CR>:vsplit<CR>
@@ -126,13 +126,13 @@ noremap <C-l> :vertical resize +5<CR>
 "    sj
 
 "up
-nnoremap sk <C-w>k 
+nnoremap su <C-w>k
 "dowm
 nnoremap sj <C-w>j
 "let
 nnoremap sh <C-w>h
 "right
-nnoremap sl <C-w>l
+nnoremap sk <C-w>l
 
 "标签
 "新建标签
@@ -369,8 +369,9 @@ endif
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+" 
+" nmap <silent> <C-s> <Plug>(coc-range-select)
+" xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -436,11 +437,23 @@ nnoremap <silent> sf :TagbarToggle<CR>
 "=========================== indentLine =============================
 "====================================================================
 "
-let g:indentLine_char='┆'
 let g:indentLine_enabled = 1
-let g:indent_guides_start_level = 2  " 从第二层开始可视化显示缩进
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_conceal_code_blocks = 0
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char = '┆'
+
+" Vim
+let g:indentLine_color_term = 239
+
+" GVim
+let g:indentLine_color_gui = '#494f5c'
+
+" none X terminal
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
+
+" Background (Vim, GVim)
+let g:indentLine_bgcolor_term = 202
+let g:indentLine_bgcolor_gui = 'transparent'
 
 "====================================================================
 "======================== markdown-preview ==========================
