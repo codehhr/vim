@@ -34,8 +34,9 @@ Plug 'luochen1990/rainbow'
 "展示当前文件的函数
 Plug 'majutsushi/tagbar'
 
-"indentLine
+"indent guides
 Plug 'Yggdroot/indentLine'
+" Plug 'nathanaelkane/vim-indent-guides'
 
 " voldikss/vim-translator
 Plug 'voldikss/vim-translator'
@@ -456,6 +457,16 @@ let g:indentLine_color_dark = 1 " (default: 2)
 " Background (Vim, GVim)
 let g:indentLine_bgcolor_term = 202
 let g:indentLine_bgcolor_gui = 'transparent'
+
+" "====================================================================
+" "======================== vim-indent-guides ==========================
+" "====================================================================
+" "
+" let g:indent_guides_enable_on_vim_startup = 1
+" " Setting custom indent colors
+" let g:indent_guides_auto_colors = 0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#494f5c   ctermbg=236
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#494f51   ctermbg=237
 
 "====================================================================
 "======================== markdown-preview ==========================
