@@ -106,6 +106,7 @@
 	"explorer.buffer.showHiddenBuffers": false,
 	"explorer.position": "left",
 	"explorer.keyMappings.global": {
+		"`": "toggleSelection",
 		"w": "toggleSelection",
 		"M": "actionMenu",
 		"L": "expandRecursive",
