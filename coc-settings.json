@@ -109,7 +109,6 @@
 		"w": "toggleSelection",
 		"M": "actionMenu",
 		"L": "expandRecursive",
-		"l": ["wait", "expandable?", "expand", "open"],
 		"S": ["wait", "expandable?", "cd", "open"],
 		"<cr>": ["wait", "expandable?", "cd", "open"],
 		"h": ["wait", "expanded?", "collapse", "expand"],
