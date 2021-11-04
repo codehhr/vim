@@ -98,9 +98,9 @@ nnoremap R :source $MYVIMRC<CR>
 " jj for ESC
 inoremap jj <ESC>
 
+map H 5h
 map J 5j
 map K 5k
-map H 5h
 map L 5l
 
 "向右分屏,光标在右
@@ -227,6 +227,8 @@ set termguicolors                   " Enable True Color Support (ensure you're u
 "
 " coc extensions
 let g:coc_global_extensions = [
+    \ 'coc-tsserver',
+    \ 'coc-marketplace',
 	\ 'coc-json',
 	\ 'coc-vimlsp', 
 	\ 'coc-prettier', 
@@ -245,6 +247,7 @@ let g:coc_global_extensions = [
 	\ 'coc-flutter-tools', 
 	\ 'coc-tslint', 
 	\ 'coc-eslint', 
+	\ 'coc-docthis', 
 	\ 'coc-actions', 
 	\ 'coc-vetur']
 
@@ -306,8 +309,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use <C-a> to show documentation in preview window.
-nnoremap <silent> <C-a> :call <SID>show_documentation()<CR>
+" Use <C-s> to show documentation in preview window.
+nnoremap <silent> <C-s> :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -367,12 +370,6 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
-
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-" 
-" nmap <silent> <C-s> <Plug>(coc-range-select)
-" xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
