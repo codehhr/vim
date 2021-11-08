@@ -198,7 +198,7 @@ set clipboard+=unnamed,unnamedplus	"可以从vim复制到剪贴版中
 set mouse=a							"可以在buffer的任何地方使用鼠标 
 set cursorline						"高亮当前行 
 " 切换显示高亮列
-noremap lc :set cursorcolumn!<CR>
+" noremap lc :set cursorcolumn!<CR>
 set hlsearch						"显示高亮搜索 
 set incsearch						"增量高亮搜索"
 set smartcase						"智能大小写"
@@ -226,7 +226,15 @@ set termguicolors                   " Enable True Color Support (ensure you're u
 "==================================================================== 
 "
 " coc extensions
+" =========================================
+" =========================================
+" + coc-fish need bash-language-server ++++
+" + npm install bash-language-server -g +++
+" =========================================
+" =========================================
 let g:coc_global_extensions = [
+    \ 'coc-html',
+    \ 'coc-css',
     \ 'coc-tsserver',
     \ 'coc-marketplace',
 	\ 'coc-json',
@@ -249,6 +257,14 @@ let g:coc_global_extensions = [
 	\ 'coc-eslint', 
 	\ 'coc-docthis', 
 	\ 'coc-actions', 
+	\ 'coc-erlang_ls', 
+	\ '@yaegassy/coc-nginx', 
+	\ 'coc-fish', 
+	\ '@yaegassy/coc-volar', 
+	\ 'coc-f5', 
+	\ 'coc-rainbow-fart', 
+	\ 'coc-webview', 
+	\ 'coc-markdown-preview-enhanced', 
 	\ 'coc-vetur']
 
 " TextEdit might fail if hidden is not set.
@@ -300,7 +316,7 @@ nmap <silent> -- <Plug>(coc-diagnostic-prev)
 nmap <silent> == <Plug>(coc-diagnostic-next)
 
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nnoremap [p :CocDiagnostics<CR>
+" nnoremap [p :CocDiagnostics<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
