@@ -562,19 +562,10 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 "======================== vim-airline ===============================
 "====================================================================
 "
+" let g:airline#extensions#tabline#enabled=1
 set t_Co=256				                            "在windows中用xshell连接打开vim可以显示色彩
 let g:airline_theme="bubblegum"
 let g:airline_powerline_fonts = 1						"支持 powerline 字体
-" let g:airline_symbols.linenr = ' ['                   " current line
-" let g:airline_symbols.maxlinenr = '] '                "maxline
-" let g:airline_symbols.readonly = '[readonly]'
-" let g:airline_symbols.dirty = '[dirty]'
-" let g:airline_symbols.crypt = '[crypt]'
-" let g:airline#extensions#branch#enabled = 1
-" let g:airline#extensions#hunks#enabled = 1
-" let g:airline_symbols.branch = '⎇'
-" let g:airline_symbols.space = '\ua0'
-" " let g:airline#extensions#tabline#enabled=1
 let g:airline_section_warning = 0
 
 "====================================================================
