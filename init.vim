@@ -62,6 +62,7 @@ Plug 'connorholyday/vim-snazzy'
 " vim-airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ojroques/vim-scrollstatus'
 
 " icon
 Plug 'ryanoasis/vim-devicons'
@@ -82,6 +83,9 @@ Plug 'honza/vim-snippets'
 " Ag depends on the_silver_seacher
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" lazygit
+Plug 'kdheepak/lazygit.nvim' " need nvim 0.5
 
 call plug#end()
 
@@ -556,27 +560,32 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 "======================== vim-airline ===============================
 "====================================================================
 "
-set laststatus=2										" 是否显示状态栏,0 表示不显示，1 表示只在多窗口时显示，2 表示显示
 set t_Co=256				                            "在windows中用xshell连接打开vim可以显示色彩
-let g:airline_theme="deus"
-" let g:airline_theme="bubblegum"
+let g:airline_theme="bubblegum"
 let g:airline_powerline_fonts = 1						"支持 powerline 字体
-let g:powerline_pycmd="py3"
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
-let g:airline_symbols.linenr = " [" " current line
-let g:airline_symbols.maxlinenr = '] ' "maxline
-let g:airline_symbols.readonly = "[readonly]"
-let g:airline_symbols.dirty = "[dirty]"
-let g:airline_symbols.crypt = "[crypt]"
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#hunks#enabled = 1
-let g:airline_symbols.branch = "⎇"
-let g:airline_symbols.space = "\ua0"
-" let g:airline#extensions#tabline#enabled=1
-" let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
+" let g:airline_symbols.linenr = ' ['                   " current line
+" let g:airline_symbols.maxlinenr = '] '                "maxline
+" let g:airline_symbols.readonly = '[readonly]'
+" let g:airline_symbols.dirty = '[dirty]'
+" let g:airline_symbols.crypt = '[crypt]'
+" let g:airline#extensions#branch#enabled = 1
+" let g:airline#extensions#hunks#enabled = 1
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.space = '\ua0'
+" " let g:airline#extensions#tabline#enabled=1
 let g:airline_section_warning = 0
+
+"====================================================================
+"======================== vim-scrollstatus ==========================
+"====================================================================
+"
+let g:scrollstatus_size = 20
+let g:airline_section_x = '%{ScrollStatus()} '
+let g:airline_section_y = airline#section#create_right(['filetype'])
+let g:airline_section_z = airline#section#create([
+            \ '[ %#__accent_bold#%l%#__restore__#/%L ]', '',
+            \ ' %{strftime("%-I:%M %p")}'
+            \ ])
 
 "====================================================================
 "============================= vim-rainbow ==========================
@@ -683,3 +692,14 @@ nmap <space>( :normal yss(<CR>
 "
 noremap <space>z :Files<CR>
 noremap <space>b :Buffers<CR>
+
+"====================================================================
+"============================= lazygit ==============================
+"====================================================================
+"
+let g:lazygit_floating_window_winblend = 0 " transparency of floating window
+let g:lazygit_floating_window_scaling_factor = 0.8 " scaling factor for floating window
+let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
+let g:lazygit_floating_window_use_plenary = 0 " use plenary.nvim to manage floating window if available
+let g:lazygit_use_neovim_remote = 1 " fallback to 0 if neovim-remote is not installed
+nnoremap <space><space> :LazyGit<CR>
