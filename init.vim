@@ -182,8 +182,6 @@ filetype on
 filetype plugin indent on
 set nofoldenable					"启动 vim 时关闭折叠代码"
 set diffopt+=vertical				" 垂直窗口 git diff"
-" 打开 vim 时自动打开 NERDTree
-" autocmd vimenter * NERDTree | wincmd p
 set scrolloff=5						"垂直滚动光标留出空余
 set sidescrolloff=10				" 水平滚动光标留出空余
 noremap re :set relativenumber!<CR>
