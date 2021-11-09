@@ -84,6 +84,8 @@ Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" gitgutter
+Plug 'airblade/vim-gitgutter'
 " lazygit
 Plug 'kdheepak/lazygit.nvim' " need nvim 0.5
 
@@ -320,7 +322,7 @@ nmap <silent> -- <Plug>(coc-diagnostic-prev)
 nmap <silent> == <Plug>(coc-diagnostic-next)
 
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-" nnoremap [p :CocDiagnostics<CR>
+" nnoremap [d :CocDiagnostics<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -702,4 +704,13 @@ let g:lazygit_floating_window_scaling_factor = 0.8 " scaling factor for floating
 let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
 let g:lazygit_floating_window_use_plenary = 0 " use plenary.nvim to manage floating window if available
 let g:lazygit_use_neovim_remote = 1 " fallback to 0 if neovim-remote is not installed
-nnoremap <space><space> :LazyGit<CR>
+nnoremap <leader>] :LazyGit<CR>
+nnoremap <space>g :LazyGit<CR>
+
+"====================================================================
+"========================== vim-gitgutter ===========================
+"====================================================================
+"
+nmap -= <Plug>(GitGutterNextHunk)
+nmap =- <Plug>(GitGutterPrevHunk)
+nmap [p <Plug>(GitGutterPreviewHunk)
