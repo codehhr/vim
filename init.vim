@@ -265,7 +265,6 @@ let g:coc_global_extensions = [
 	\ '@yaegassy/coc-nginx', 
 	\ 'coc-fish', 
 	\ '@yaegassy/coc-volar', 
-	\ 'coc-f5', 
 	\ 'coc-rainbow-fart', 
 	\ 'coc-webview', 
 	\ 'coc-markdown-preview-enhanced', 
