@@ -455,9 +455,11 @@ nnoremap <silent> sf :TagbarToggle<CR>
 "=========================== indentLine =============================
 "====================================================================
 "
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
 let g:indentLine_enabled = 1
 let g:indentLine_concealcursor = 'inc'
-let g:indentLine_conceallevel = 2
+" let g:indentLine_conceallevel = 2
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_char = '┆'
 
@@ -536,11 +538,11 @@ imap <silent> <F9> <Plug>StopMarkdownPreview
 "===========================vim-vue==================================
 "====================================================================
 "
-au BufNewFile,BufRead *.html,*.js,*.vue set tabstop=2
+au BufNewFile,BufRead *.html,*.js,*.vue set tabstop=4
 
-au BufNewFile,BufRead *.html,*.js,*.vue set softtabstop=2
+au BufNewFile,BufRead *.html,*.js,*.vue set softtabstop=4
 
-au BufNewFile,BufRead *.html,*.js,*.vue set shiftwidth=2
+au BufNewFile,BufRead *.html,*.js,*.vue set shiftwidth=4
 
 au BufNewFile,BufRead *.html,*.js,*.vue set expandtab
 
@@ -564,6 +566,7 @@ let g:airline_theme="bubblegum"
 let g:airline_powerline_fonts = 1						"支持 powerline 字体
 let g:airline_section_warning = 0
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
 if !exists('g:airline_symbols')                         " powerline symbols
   let g:airline_symbols = {}
 endif
