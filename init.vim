@@ -244,6 +244,7 @@ let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-marketplace',
 	\ 'coc-json',
+	\ 'coc-webpack',
 	\ 'coc-vimlsp', 
 	\ 'coc-prettier', 
 	\ 'coc-prisma', 
