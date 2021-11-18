@@ -692,6 +692,7 @@ nmap <space>( :normal yss(<CR>
 "
 noremap <space>z :Files<CR>
 noremap <space>b :Buffers<CR>
+noremap <space>a :Ag<CR>
 
 "====================================================================
 "============================= lazygit ==============================
