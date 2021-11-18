@@ -406,8 +406,8 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 noremap <space>l :CocList<CR>
 "open coc marketplace (打开取决于网速)
 noremap <space>m :CocList marketplace<CR>
-"open CocConfig.json
-noremap <space>c :tabnew<CR>:CocConfig<CR>
+"open coc-settings.json
+noremap <space>s :tabnew<CR>:CocConfig<CR>
 " list CocCommand
 noremap <space>d :CocCommand<CR>
 " open explorer
