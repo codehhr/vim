@@ -409,7 +409,7 @@ noremap <space>m :CocList marketplace<CR>
 "open coc-settings.json
 noremap <space>s :tabnew<CR>:CocConfig<CR>
 " list CocCommand
-noremap <space>d :CocCommand<CR>
+noremap <space>c :CocCommand<CR>
 " open explorer
 noremap ss :CocCommand explorer<CR>
 noremap <C-\> :CocCommand explorer<CR>
