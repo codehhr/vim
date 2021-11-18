@@ -226,6 +226,7 @@ set wildmenu
 set termguicolors                   " Enable True Color Support (ensure you're using a 256-color enabled $TERM, e.g. xterm-256color)
 set nobackup
 set noundofile
+set foldmethod=syntax
 
 "==================================================================== 
 "=========================== coc 代码补全 ===========================
