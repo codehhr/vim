@@ -224,6 +224,7 @@ set nowrap							"不换行"
 set noerrorbells					"no bell on error"
 set wildmenu
 set termguicolors                   " Enable True Color Support (ensure you're using a 256-color enabled $TERM, e.g. xterm-256color)
+set noswapfile
 set nobackup
 set noundofile
 set foldmethod=syntax
