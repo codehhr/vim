@@ -270,7 +270,6 @@ let g:coc_global_extensions = [
 	\ '@yaegassy/coc-nginx', 
 	\ 'coc-fish', 
 	\ '@yaegassy/coc-volar', 
-	\ 'coc-rainbow-fart', 
 	\ 'coc-webview', 
 	\ 'coc-markdown-preview-enhanced', 
 	\ 'coc-vetur']
