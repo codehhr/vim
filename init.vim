@@ -89,6 +89,9 @@ Plug 'airblade/vim-gitgutter'
 " lazygit
 Plug 'kdheepak/lazygit.nvim' " need nvim 0.5
 
+" vim highlight word
+Plug 'lfv89/vim-interestingwords'
+
 call plug#end()
 
 "==================================================================== 
@@ -227,7 +230,8 @@ set termguicolors                   " Enable True Color Support (ensure you're u
 set noswapfile
 set nobackup
 set noundofile
-set foldmethod=syntax
+" set foldmethod=syntax
+set foldmethod=manual
 
 "==================================================================== 
 "=========================== coc 代码补全 ===========================
@@ -712,3 +716,10 @@ nnoremap <space>g :LazyGit<CR>
 nmap -= <Plug>(GitGutterNextHunk)
 nmap =- <Plug>(GitGutterPrevHunk)
 nmap [p <Plug>(GitGutterPreviewHunk)
+
+"====================================================================
+"====================== vim-interestingwords ========================
+"====================================================================
+"
+map <space>k <leader>k
+map <space>K <leader>K
