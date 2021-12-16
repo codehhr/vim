@@ -86,7 +86,7 @@
 	"typescript.suggestionActions.enabled": true,
 	"typescript.format.enabled": true,
 	"jest.watch": false,
-	"explorer.width": 30,
+	"explorer.width": 40,
 	"explorer.quitOnOpen": true,
 	"explorer.sources": [
 		{
@@ -113,8 +113,10 @@
 		"S": ["wait", "expandable?", "cd", "open"],
 		"<cr>": ["wait", "expandable?", "cd", "open"],
 		"h": ["wait", "expanded?", "collapse", "expand"],
+		"l": ["wait", "expanded?", "collapse", "expand"],
 		"N": "open:vsplit",
 		"n": "open:tab",
+		"o": "open:tab",
 		"c": "collapse",
 		"H": "gotoParent",
 		"<C-l>": "copyFilepath",
