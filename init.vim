@@ -58,6 +58,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " 主题颜色
 Plug 'connorholyday/vim-snazzy'
+Plug 'sainnhe/gruvbox-material'
 
 " vim-airline
 Plug 'vim-airline/vim-airline'
@@ -173,8 +174,18 @@ syntax enable
 syntax on
 
 "主题颜色设定
-let g:SnazzyTransparent = 1			" snazzy transparent"
-colorscheme snazzy
+" let g:SnazzyTransparent = 1			" snazzy transparent"
+" colorscheme snazzy
+
+" set constrast
+" Available values : 'hard', 'medium'(default), 'soft'
+" let g:gruvbox_material_background = 'soft'
+colorscheme gruvbox-material
+set background=dark
+" set background=light
+if has('termguicolors')
+    set termguicolors
+endif
 
 "==================================================================== 
 "====================== 一般设置 ====================================
@@ -226,7 +237,6 @@ set autoindent						"autoindent配合下面一条命令根据不同语言类型�
 set nowrap							"不换行"
 set noerrorbells					"no bell on error"
 set wildmenu
-set termguicolors                   " Enable True Color Support (ensure you're using a 256-color enabled $TERM, e.g. xterm-256color)
 set noswapfile
 set nobackup
 set noundofile
@@ -567,12 +577,11 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 "======================== vim-airline ===============================
 "====================================================================
 "
-" let g:airline#extensions#tabline#enabled=1
 set t_Co=256				                            "在windows中用xshell连接打开vim可以显示色彩
 let g:airline_theme="bubblegum"
 let g:airline_powerline_fonts = 1						"支持 powerline 字体
 let g:airline_section_warning = 0
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
 if !exists('g:airline_symbols')                         " powerline symbols
   let g:airline_symbols = {}
