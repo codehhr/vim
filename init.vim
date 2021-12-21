@@ -35,8 +35,8 @@ Plug 'luochen1990/rainbow'
 Plug 'majutsushi/tagbar'
 
 "indent guides
-" Plug 'Yggdroot/indentLine'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
+" Plug 'nathanaelkane/vim-indent-guides'
 
 " voldikss/vim-translator
 Plug 'voldikss/vim-translator'
@@ -462,37 +462,37 @@ nnoremap <silent> sf :TagbarToggle<CR>
 "=========================== indentLine =============================
 "====================================================================
 "
-" let g:indent_guides_guide_size = 1
-" let g:indent_guides_start_level = 2
-" let g:indentLine_enabled = 1
-" let g:indentLine_concealcursor = 'inc'
-" " let g:indentLine_conceallevel = 2
-" " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-" let g:indentLine_char = '┆'
-"
-" " Vim
-" let g:indentLine_color_term = 239
-"
-" " GVim
-" let g:indentLine_color_gui = '#494f5c'
-"
-" " none X terminal
-" let g:indentLine_color_tty_light = 7 " (default: 4)
-" let g:indentLine_color_dark = 1 " (default: 2)
-"
-" " Background (Vim, GVim)
-" let g:indentLine_bgcolor_term = 202
-" let g:indentLine_bgcolor_gui = 'transparent'
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:indentLine_enabled = 1
+let g:indentLine_concealcursor = 'inc'
+" let g:indentLine_conceallevel = 2
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char = '┆'
+
+" Vim
+let g:indentLine_color_term = 239
+
+" GVim
+let g:indentLine_color_gui = '#494f5c'
+
+" none X terminal
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
+
+" Background (Vim, GVim)
+let g:indentLine_bgcolor_term = 202
+let g:indentLine_bgcolor_gui = 'transparent'
 
 " "====================================================================
 " "======================== vim-indent-guides ==========================
 " "====================================================================
 " "
-let g:indent_guides_enable_on_vim_startup = 1
-" Setting custom indent colors
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#494f5c   ctermbg=236
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#494f51   ctermbg=237
+" let g:indent_guides_enable_on_vim_startup = 1
+" " Setting custom indent colors
+" let g:indent_guides_auto_colors = 0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#494f5c   ctermbg=236
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#494f51   ctermbg=237
 
 "====================================================================
 "======================== markdown-preview ==========================
