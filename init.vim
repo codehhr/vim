@@ -155,6 +155,8 @@ noremap <S-TAB> :tabp<CR>
 
 "打开文件
 noremap e :edit<space>
+" 打开 nvimrc
+noremap <space>v :tabnew<CR>:edit ~/.config/nvim/init.vim<CR>
 
 "exec node
 noremap <C-c> :! node %<CR>
@@ -285,6 +287,7 @@ let g:coc_global_extensions = [
 	\ 'coc-fish', 
 	\ '@yaegassy/coc-volar', 
 	\ 'coc-webview', 
+	\ 'coc-markdownlint', 
 	\ 'coc-markdown-preview-enhanced', 
 	\ 'coc-vetur']
 
