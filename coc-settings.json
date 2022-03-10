@@ -104,6 +104,7 @@
 	"explorer.previewAction.onHover": false,
 	"explorer.buffer.showHiddenBuffers": false,
 	"explorer.position": "left",
+	"explorer.filename.colored.enable": true,
 	"explorer.keyMappings.global": {
 		"`": "toggleSelection",
 		"w": "toggleSelection",
