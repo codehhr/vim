@@ -176,15 +176,15 @@ syntax enable
 syntax on
 
 "主题颜色设定
-" let g:SnazzyTransparent = 1			" snazzy transparent"
-" colorscheme snazzy
+let g:SnazzyTransparent = 1			" snazzy transparent"
+colorscheme snazzy
 
-" set constrast
-" Available values : 'hard', 'medium'(default), 'soft'
+"   set constrast
+"   Available values : 'hard', 'medium'(default), 'soft'
 " let g:gruvbox_material_background = 'soft'
-colorscheme gruvbox-material
-set background=dark
-" set background=light
+" colorscheme gruvbox-material
+" set background=dark
+
 if has('termguicolors')
     set termguicolors
 endif
