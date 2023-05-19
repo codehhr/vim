@@ -93,6 +93,9 @@ Plug 'kdheepak/lazygit.nvim' " need nvim 0.5
 " vim highlight word
 Plug 'lfv89/vim-interestingwords'
 
+" tokyonight theme
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+
 call plug#end()
 
 "==================================================================== 
@@ -176,14 +179,26 @@ syntax enable
 syntax on
 
 "主题颜色设定
-let g:SnazzyTransparent = 1			" snazzy transparent"
-colorscheme snazzy
 
+" 方案1
+" colorscheme snazzy
+" let g:SnazzyTransparent = 1
+
+" 方案2
 "   set constrast
 "   Available values : 'hard', 'medium'(default), 'soft'
+
 " let g:gruvbox_material_background = 'soft'
 " colorscheme gruvbox-material
 " set background=dark
+
+" 方案3
+
+" " There are also colorschemes for the different styles
+" colorscheme tokyonight-night
+" colorscheme tokyonight-storm
+" colorscheme tokyonight-day
+colorscheme tokyonight-moon
 
 if has('termguicolors')
     set termguicolors
