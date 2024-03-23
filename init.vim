@@ -1,5 +1,4 @@
-"  __  ____   __  _   ___     _____ __  __ ____   ____
-" |  \/  \ \ / / | \ | \ \   / /_ _|  \/  |  _ \ / ___|
+"  __  ____   __  _   ___     _____ __  __ ____   ____ |  \/  \ \ / / | \ | \ \   / /_ _|  \/  |  _ \ / ___|
 " | |\/| |\ V /  |  \| |\ \ / / | || |\/| | |_) | |
 " | |  | | | |   | |\  | \ V /  | || |  | |  _ <| |___
 " |_|  |_| |_|   |_| \_|  \_/  |___|_|  |_|_| \_\\____|
@@ -135,18 +134,18 @@ noremap <C-h> :vertical resize -5<CR>
 noremap <C-l> :vertical resize +5<CR>
 
 "光标在分屏之间移动
-"    su
-"  sh  sk
+"    sk
+"  sh  sl
 "    sj
 
 "up
-nnoremap su <C-w>k
+nnoremap sk <C-w>k
 "dowm
 nnoremap sj <C-w>j
 "let
 nnoremap sh <C-w>h
 "right
-nnoremap sk <C-w>l
+nnoremap sl <C-w>l
 
 "标签
 "新建标签
@@ -162,7 +161,7 @@ noremap e :edit<space>
 noremap <space>v :tabnew<CR>:edit ~/.config/nvim/init.vim<CR>
 
 "exec node
-noremap <C-c> :! node %<CR>
+noremap <C-c> :! bash %<CR>
 
 "==================================================================== 
 "============================ vim-startify ==========================
@@ -196,9 +195,11 @@ syntax on
 
 " " There are also colorschemes for the different styles
 " colorscheme tokyonight-night
-" colorscheme tokyonight-storm
+colorscheme tokyonight-storm
 " colorscheme tokyonight-day
-colorscheme tokyonight-moon
+" colorscheme tokyonight-moon
+
+" colorscheme slate
 
 if has('termguicolors')
     set termguicolors
@@ -277,10 +278,8 @@ let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-marketplace',
 	\ 'coc-json',
-	\ 'coc-webpack',
 	\ 'coc-vimlsp', 
 	\ 'coc-prettier', 
-	\ 'coc-prisma', 
 	\ 'coc-python',
 	\ 'coc-syntax', 
 	\ 'coc-diagnostic', 
@@ -303,8 +302,7 @@ let g:coc_global_extensions = [
 	\ '@yaegassy/coc-volar', 
 	\ 'coc-webview', 
 	\ 'coc-markdownlint', 
-	\ 'coc-markdown-preview-enhanced', 
-	\ 'coc-vetur']
+	\ 'coc-markdown-preview-enhanced']
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -732,7 +730,7 @@ noremap <space>a :Ag<CR>
 "
 let g:lazygit_floating_window_winblend = 0 " transparency of floating window
 let g:lazygit_floating_window_scaling_factor = 0.8 " scaling factor for floating window
-let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
+let g:lazygit_floating_window_border_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
 let g:lazygit_floating_window_use_plenary = 0 " use plenary.nvim to manage floating window if available
 let g:lazygit_use_neovim_remote = 1 " fallback to 0 if neovim-remote is not installed
 nnoremap <space>g :LazyGit<CR>
